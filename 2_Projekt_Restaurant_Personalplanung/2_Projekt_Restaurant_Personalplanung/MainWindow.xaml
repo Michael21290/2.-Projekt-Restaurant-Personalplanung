@@ -6,7 +6,5 @@
         xmlns:local="clr-namespace:_2_Projekt_Restaurant_Personalplanung"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+    <UserControl Name="UserControl" ></UserControl>
 </Window>

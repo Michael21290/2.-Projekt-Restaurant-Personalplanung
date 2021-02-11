@@ -20,9 +20,16 @@ namespace _2_Projekt_Restaurant_Personalplanung
     /// </summary>
     public partial class Dienstplan : UserControl
     {
-        public Dienstplan()
+        MainWindow mainWindow;
+        public Dienstplan(MainWindow _mainWindow)
         {
             InitializeComponent();
+            mainWindow = _mainWindow;
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            mainWindow.LoginAnzeigen();
         }
     }
 }

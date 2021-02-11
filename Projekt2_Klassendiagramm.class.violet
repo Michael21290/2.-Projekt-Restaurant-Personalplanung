@@ -28,19 +28,19 @@ Personal</string>
      <string>x</string>
      <void method="set">
       <object idref="Point2D$Double0"/>
-      <double>972.0</double>
+      <double>306.0</double>
      </void>
     </void>
     <void class="java.awt.geom.Point2D$Double" method="getField">
      <string>y</string>
      <void method="set">
       <object idref="Point2D$Double0"/>
-      <double>218.0</double>
+      <double>13.0</double>
      </void>
     </void>
     <void method="setLocation">
-     <double>972.0</double>
-     <double>218.0</double>
+     <double>306.0</double>
+     <double>13.0</double>
     </void>
    </object>
   </void>
@@ -62,19 +62,19 @@ Personal</string>
      <string>x</string>
      <void method="set">
       <object idref="Point2D$Double1"/>
-      <double>869.0</double>
+      <double>203.0</double>
      </void>
     </void>
     <void class="java.awt.geom.Point2D$Double" method="getField">
      <string>y</string>
      <void method="set">
       <object idref="Point2D$Double1"/>
-      <double>507.0</double>
+      <double>302.0</double>
      </void>
     </void>
     <void method="setLocation">
-     <double>869.0</double>
-     <double>507.0</double>
+     <double>203.0</double>
+     <double>302.0</double>
     </void>
    </object>
   </void>
@@ -96,19 +96,19 @@ Personal</string>
      <string>x</string>
      <void method="set">
       <object idref="Point2D$Double2"/>
-      <double>1143.0</double>
+      <double>477.0</double>
      </void>
     </void>
     <void class="java.awt.geom.Point2D$Double" method="getField">
      <string>y</string>
      <void method="set">
       <object idref="Point2D$Double2"/>
-      <double>509.0</double>
+      <double>304.0</double>
      </void>
     </void>
     <void method="setLocation">
-     <double>1143.0</double>
-     <double>509.0</double>
+     <double>477.0</double>
+     <double>304.0</double>
     </void>
    </object>
   </void>
@@ -118,7 +118,7 @@ Personal</string>
      <void property="text">
       <string>+Kalenderwoche: string
 +ErstelltVon: string
-</string>
++Personalgruppe: string</string>
      </void>
     </void>
     <void property="methods">
@@ -137,19 +137,19 @@ Personal</string>
      <string>x</string>
      <void method="set">
       <object idref="Point2D$Double3"/>
-      <double>1297.0</double>
+      <double>631.0</double>
      </void>
     </void>
     <void class="java.awt.geom.Point2D$Double" method="getField">
      <string>y</string>
      <void method="set">
       <object idref="Point2D$Double3"/>
-      <double>274.0</double>
+      <double>69.0</double>
      </void>
     </void>
     <void method="setLocation">
-     <double>1297.0</double>
-     <double>274.0</double>
+     <double>631.0</double>
+     <double>69.0</double>
     </void>
    </object>
   </void>
@@ -160,7 +160,8 @@ Personal</string>
       <string>+AccountID:
 +Benutzername: string
 -passwort: string
-+IstLeitung: bool
++IstAdmin: bool
+Personal ID
 </string>
      </void>
     </void>
@@ -180,19 +181,19 @@ Personal</string>
      <string>x</string>
      <void method="set">
       <object idref="Point2D$Double4"/>
-      <double>670.0</double>
+      <double>4.0</double>
      </void>
     </void>
     <void class="java.awt.geom.Point2D$Double" method="getField">
      <string>y</string>
      <void method="set">
       <object idref="Point2D$Double4"/>
-      <double>252.0</double>
+      <double>47.0</double>
      </void>
     </void>
     <void method="setLocation">
-     <double>670.0</double>
-     <double>252.0</double>
+     <double>4.0</double>
+     <double>47.0</double>
     </void>
    </object>
   </void>

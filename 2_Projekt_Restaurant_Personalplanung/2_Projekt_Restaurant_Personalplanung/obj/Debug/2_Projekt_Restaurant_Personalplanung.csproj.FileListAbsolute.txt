@@ -1,0 +1,43 @@
+C:\Users\gerbm\Desktop\Neuer Ordner (2)\2_Projekt_Restaurant_Personalplanung\2_Projekt_Restaurant_Personalplanung\bin\Debug\2_Projekt_Restaurant_Personalplanung.exe.config
+C:\Users\gerbm\Desktop\Neuer Ordner (2)\2_Projekt_Restaurant_Personalplanung\2_Projekt_Restaurant_Personalplanung\bin\Debug\2_Projekt_Restaurant_Personalplanung.exe
+C:\Users\gerbm\Desktop\Neuer Ordner (2)\2_Projekt_Restaurant_Personalplanung\2_Projekt_Restaurant_Personalplanung\bin\Debug\2_Projekt_Restaurant_Personalplanung.pdb
+C:\Users\gerbm\Desktop\Neuer Ordner (2)\2_Projekt_Restaurant_Personalplanung\2_Projekt_Restaurant_Personalplanung\obj\Debug\2_Projekt_Restaurant_Personalplanung.csprojAssemblyReference.cache
+C:\Users\gerbm\Desktop\Neuer Ordner (2)\2_Projekt_Restaurant_Personalplanung\2_Projekt_Restaurant_Personalplanung\obj\Debug\Dienstplan.g.cs
+C:\Users\gerbm\Desktop\Neuer Ordner (2)\2_Projekt_Restaurant_Personalplanung\2_Projekt_Restaurant_Personalplanung\obj\Debug\MainWindow.g.cs
+C:\Users\gerbm\Desktop\Neuer Ordner (2)\2_Projekt_Restaurant_Personalplanung\2_Projekt_Restaurant_Personalplanung\obj\Debug\App.g.cs
+C:\Users\gerbm\Desktop\Neuer Ordner (2)\2_Projekt_Restaurant_Personalplanung\2_Projekt_Restaurant_Personalplanung\obj\Debug\2_Projekt_Restaurant_Personalplanung_MarkupCompile.cache
+C:\Users\gerbm\Desktop\Neuer Ordner (2)\2_Projekt_Restaurant_Personalplanung\2_Projekt_Restaurant_Personalplanung\obj\Debug\2_Projekt_Restaurant_Personalplanung_MarkupCompile.lref
+C:\Users\gerbm\Desktop\Neuer Ordner (2)\2_Projekt_Restaurant_Personalplanung\2_Projekt_Restaurant_Personalplanung\obj\Debug\Dienstplan.baml
+C:\Users\gerbm\Desktop\Neuer Ordner (2)\2_Projekt_Restaurant_Personalplanung\2_Projekt_Restaurant_Personalplanung\obj\Debug\MainWindow.baml
+C:\Users\gerbm\Desktop\Neuer Ordner (2)\2_Projekt_Restaurant_Personalplanung\2_Projekt_Restaurant_Personalplanung\obj\Debug\2_Projekt_Restaurant_Personalplanung.g.resources
+C:\Users\gerbm\Desktop\Neuer Ordner (2)\2_Projekt_Restaurant_Personalplanung\2_Projekt_Restaurant_Personalplanung\obj\Debug\_2_Projekt_Restaurant_Personalplanung.Properties.Resources.resources
+C:\Users\gerbm\Desktop\Neuer Ordner (2)\2_Projekt_Restaurant_Personalplanung\2_Projekt_Restaurant_Personalplanung\obj\Debug\2_Projekt_Restaurant_Personalplanung.csproj.GenerateResource.cache
+C:\Users\gerbm\Desktop\Neuer Ordner (2)\2_Projekt_Restaurant_Personalplanung\2_Projekt_Restaurant_Personalplanung\obj\Debug\2_Projekt_Restaurant_Personalplanung.csproj.CoreCompileInputs.cache
+C:\Users\gerbm\Desktop\Neuer Ordner (2)\2_Projekt_Restaurant_Personalplanung\2_Projekt_Restaurant_Personalplanung\obj\Debug\2_Projekt_Restaurant_Personalplanung.exe
+C:\Users\gerbm\Desktop\Neuer Ordner (2)\2_Projekt_Restaurant_Personalplanung\2_Projekt_Restaurant_Personalplanung\obj\Debug\2_Projekt_Restaurant_Personalplanung.pdb
+C:\Users\gerbm\Desktop\Neuer Ordner (2)\2_Projekt_Restaurant_Personalplanung\2_Projekt_Restaurant_Personalplanung\obj\Debug\Login.g.cs
+C:\Users\gerbm\Desktop\Neuer Ordner (2)\2_Projekt_Restaurant_Personalplanung\2_Projekt_Restaurant_Personalplanung\obj\Debug\Login.baml
+C:\Users\gerbm\Desktop\2.-Projekt-Restaurant-Personalplanung\2_Projekt_Restaurant_Personalplanung\2_Projekt_Restaurant_Personalplanung\bin\Debug\2_Projekt_Restaurant_Personalplanung.exe.config
+C:\Users\gerbm\Desktop\2.-Projekt-Restaurant-Personalplanung\2_Projekt_Restaurant_Personalplanung\2_Projekt_Restaurant_Personalplanung\bin\Debug\2_Projekt_Restaurant_Personalplanung.exe
+C:\Users\gerbm\Desktop\2.-Projekt-Restaurant-Personalplanung\2_Projekt_Restaurant_Personalplanung\2_Projekt_Restaurant_Personalplanung\bin\Debug\2_Projekt_Restaurant_Personalplanung.pdb
+C:\Users\gerbm\Desktop\2.-Projekt-Restaurant-Personalplanung\2_Projekt_Restaurant_Personalplanung\2_Projekt_Restaurant_Personalplanung\bin\Debug\EntityFramework.dll
+C:\Users\gerbm\Desktop\2.-Projekt-Restaurant-Personalplanung\2_Projekt_Restaurant_Personalplanung\2_Projekt_Restaurant_Personalplanung\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\gerbm\Desktop\2.-Projekt-Restaurant-Personalplanung\2_Projekt_Restaurant_Personalplanung\2_Projekt_Restaurant_Personalplanung\bin\Debug\EntityFramework.xml
+C:\Users\gerbm\Desktop\2.-Projekt-Restaurant-Personalplanung\2_Projekt_Restaurant_Personalplanung\2_Projekt_Restaurant_Personalplanung\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\gerbm\Desktop\2.-Projekt-Restaurant-Personalplanung\2_Projekt_Restaurant_Personalplanung\2_Projekt_Restaurant_Personalplanung\obj\Debug\2_Projekt_Restaurant_Personalplanung.csprojAssemblyReference.cache
+C:\Users\gerbm\Desktop\2.-Projekt-Restaurant-Personalplanung\2_Projekt_Restaurant_Personalplanung\2_Projekt_Restaurant_Personalplanung\obj\Debug\Dienstplan.g.cs
+C:\Users\gerbm\Desktop\2.-Projekt-Restaurant-Personalplanung\2_Projekt_Restaurant_Personalplanung\2_Projekt_Restaurant_Personalplanung\obj\Debug\Login.g.cs
+C:\Users\gerbm\Desktop\2.-Projekt-Restaurant-Personalplanung\2_Projekt_Restaurant_Personalplanung\2_Projekt_Restaurant_Personalplanung\obj\Debug\MainWindow.g.cs
+C:\Users\gerbm\Desktop\2.-Projekt-Restaurant-Personalplanung\2_Projekt_Restaurant_Personalplanung\2_Projekt_Restaurant_Personalplanung\obj\Debug\App.g.cs
+C:\Users\gerbm\Desktop\2.-Projekt-Restaurant-Personalplanung\2_Projekt_Restaurant_Personalplanung\2_Projekt_Restaurant_Personalplanung\obj\Debug\2_Projekt_Restaurant_Personalplanung_MarkupCompile.cache
+C:\Users\gerbm\Desktop\2.-Projekt-Restaurant-Personalplanung\2_Projekt_Restaurant_Personalplanung\2_Projekt_Restaurant_Personalplanung\obj\Debug\2_Projekt_Restaurant_Personalplanung_MarkupCompile.lref
+C:\Users\gerbm\Desktop\2.-Projekt-Restaurant-Personalplanung\2_Projekt_Restaurant_Personalplanung\2_Projekt_Restaurant_Personalplanung\obj\Debug\Dienstplan.baml
+C:\Users\gerbm\Desktop\2.-Projekt-Restaurant-Personalplanung\2_Projekt_Restaurant_Personalplanung\2_Projekt_Restaurant_Personalplanung\obj\Debug\Login.baml
+C:\Users\gerbm\Desktop\2.-Projekt-Restaurant-Personalplanung\2_Projekt_Restaurant_Personalplanung\2_Projekt_Restaurant_Personalplanung\obj\Debug\MainWindow.baml
+C:\Users\gerbm\Desktop\2.-Projekt-Restaurant-Personalplanung\2_Projekt_Restaurant_Personalplanung\2_Projekt_Restaurant_Personalplanung\obj\Debug\2_Projekt_Restaurant_Personalplanung.g.resources
+C:\Users\gerbm\Desktop\2.-Projekt-Restaurant-Personalplanung\2_Projekt_Restaurant_Personalplanung\2_Projekt_Restaurant_Personalplanung\obj\Debug\_2_Projekt_Restaurant_Personalplanung.Properties.Resources.resources
+C:\Users\gerbm\Desktop\2.-Projekt-Restaurant-Personalplanung\2_Projekt_Restaurant_Personalplanung\2_Projekt_Restaurant_Personalplanung\obj\Debug\2_Projekt_Restaurant_Personalplanung.csproj.GenerateResource.cache
+C:\Users\gerbm\Desktop\2.-Projekt-Restaurant-Personalplanung\2_Projekt_Restaurant_Personalplanung\2_Projekt_Restaurant_Personalplanung\obj\Debug\2_Projekt_Restaurant_Personalplanung.csproj.CoreCompileInputs.cache
+C:\Users\gerbm\Desktop\2.-Projekt-Restaurant-Personalplanung\2_Projekt_Restaurant_Personalplanung\2_Projekt_Restaurant_Personalplanung\obj\Debug\2_Projekt_Restaurant_Personalplanung.csproj.CopyComplete
+C:\Users\gerbm\Desktop\2.-Projekt-Restaurant-Personalplanung\2_Projekt_Restaurant_Personalplanung\2_Projekt_Restaurant_Personalplanung\obj\Debug\2_Projekt_Restaurant_Personalplanung.exe
+C:\Users\gerbm\Desktop\2.-Projekt-Restaurant-Personalplanung\2_Projekt_Restaurant_Personalplanung\2_Projekt_Restaurant_Personalplanung\obj\Debug\2_Projekt_Restaurant_Personalplanung.pdb
