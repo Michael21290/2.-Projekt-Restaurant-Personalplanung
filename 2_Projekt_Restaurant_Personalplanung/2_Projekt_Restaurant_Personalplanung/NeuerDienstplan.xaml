@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="_2_Projekt_Restaurant_Personalplanung.Dienstplan"
+﻿<UserControl x:Class="_2_Projekt_Restaurant_Personalplanung.NeuerDienstplan"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -13,7 +13,7 @@
             <ColumnDefinition></ColumnDefinition>
             <ColumnDefinition></ColumnDefinition>
             <ColumnDefinition Width="auto"></ColumnDefinition>
-            
+
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"></RowDefinition>
@@ -46,7 +46,7 @@
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="{Binding Vorname}"/>
+                        <CheckBox Content="{Binding Vorname}"/>
                         <TextBlock Text=" " />
                         <TextBlock Text="{Binding Name}" />
                     </StackPanel>
@@ -58,7 +58,7 @@
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="{Binding Vorname}"/>
+                        <CheckBox Content="{Binding Vorname}"/>
                         <TextBlock Text=" " />
                         <TextBlock Text="{Binding Name}" />
                     </StackPanel>
@@ -70,7 +70,7 @@
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="{Binding Vorname}"/>
+                        <CheckBox Content="{Binding Vorname}"/>
                         <TextBlock Text=" " />
                         <TextBlock Text="{Binding Name}" />
                     </StackPanel>
@@ -82,7 +82,7 @@
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="{Binding Vorname}"/>
+                        <CheckBox Content="{Binding Vorname}"/>
                         <TextBlock Text=" " />
                         <TextBlock Text="{Binding Name}" />
                     </StackPanel>
@@ -94,7 +94,7 @@
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="{Binding Vorname}"/>
+                        <CheckBox Content="{Binding Vorname}"/>
                         <TextBlock Text=" " />
                         <TextBlock Text="{Binding Name}" />
                     </StackPanel>
@@ -106,7 +106,7 @@
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="{Binding Vorname}"/>
+                        <CheckBox Content="{Binding Vorname}"/>
                         <TextBlock Text=" " />
                         <TextBlock Text="{Binding Name}" />
                     </StackPanel>
@@ -118,7 +118,7 @@
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="{Binding Vorname}"/>
+                        <CheckBox Content="{Binding Vorname}"/>
                         <TextBlock Text=" " />
                         <TextBlock Text="{Binding Name}" />
                     </StackPanel>
@@ -130,7 +130,7 @@
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="{Binding Vorname}"/>
+                        <CheckBox Content="{Binding Vorname}"/>
                         <TextBlock Text=" " />
                         <TextBlock Text="{Binding Name}" />
                     </StackPanel>
@@ -142,7 +142,7 @@
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="{Binding Vorname}"/>
+                        <CheckBox Content="{Binding Vorname}"/>
                         <TextBlock Text=" " />
                         <TextBlock Text="{Binding Name}" />
                     </StackPanel>
@@ -154,7 +154,7 @@
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="{Binding Vorname}"/>
+                        <CheckBox Content="{Binding Vorname}"/>
                         <TextBlock Text=" " />
                         <TextBlock Text="{Binding Name}" />
                     </StackPanel>
@@ -166,7 +166,7 @@
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="{Binding Vorname}"/>
+                        <CheckBox Content="{Binding Vorname}"/>
                         <TextBlock Text=" " />
                         <TextBlock Text="{Binding Name}" />
                     </StackPanel>
@@ -178,7 +178,7 @@
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="{Binding Vorname}"/>
+                        <CheckBox Content="{Binding Vorname}"/>
                         <TextBlock Text=" " />
                         <TextBlock Text="{Binding Name}" />
                     </StackPanel>
@@ -190,7 +190,7 @@
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="{Binding Vorname}"/>
+                        <CheckBox Content="{Binding Vorname}"/>
                         <TextBlock Text=" " />
                         <TextBlock Text="{Binding Name}" />
                     </StackPanel>
@@ -202,7 +202,7 @@
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="{Binding Vorname}"/>
+                        <CheckBox Content="{Binding Vorname}"/>
                         <TextBlock Text=" " />
                         <TextBlock Text="{Binding Name}" />
                     </StackPanel>
@@ -214,7 +214,7 @@
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="{Binding Vorname}"/>
+                        <CheckBox Content="{Binding Vorname}"/>
                         <TextBlock Text=" " />
                         <TextBlock Text="{Binding Name}" />
                     </StackPanel>
@@ -226,7 +226,7 @@
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="{Binding Vorname}"/>
+                        <CheckBox Content="{Binding Vorname}"/>
                         <TextBlock Text=" " />
                         <TextBlock Text="{Binding Name}" />
                     </StackPanel>
@@ -238,7 +238,7 @@
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="{Binding Vorname}"/>
+                        <CheckBox Content="{Binding Vorname}"/>
                         <TextBlock Text=" " />
                         <TextBlock Text="{Binding Name}" />
                     </StackPanel>
@@ -250,7 +250,7 @@
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="{Binding Vorname}"/>
+                        <CheckBox Content="{Binding Vorname}"/>
                         <TextBlock Text=" " />
                         <TextBlock Text="{Binding Name}" />
                     </StackPanel>
@@ -262,7 +262,7 @@
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="{Binding Vorname}"/>
+                        <CheckBox Content="{Binding Vorname}"/>
                         <TextBlock Text=" " />
                         <TextBlock Text="{Binding Name}" />
                     </StackPanel>
@@ -274,7 +274,7 @@
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="{Binding Vorname}"/>
+                        <CheckBox Content="{Binding Vorname}"/>
                         <TextBlock Text=" " />
                         <TextBlock Text="{Binding Name}" />
                     </StackPanel>
@@ -286,7 +286,7 @@
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="{Binding Vorname}"/>
+                        <CheckBox Content="{Binding Vorname}"/>
                         <TextBlock Text=" " />
                         <TextBlock Text="{Binding Name}" />
                     </StackPanel>
@@ -294,6 +294,7 @@
             </ListView.ItemTemplate>
         </ListView>
 
+        <Button Margin="3" Width="250" Grid.ColumnSpan="4" Content="Dienstplan Speichern" FontWeight="Bold" Click="Speichern" Grid.Row="16"></Button>
         <Button Margin="3" Width="250" Grid.ColumnSpan="4" Content="Zurück zum Menü" FontWeight="Bold" Click="ZurückZumMenue" Grid.Row="16"></Button>
     </Grid>
 </UserControl>

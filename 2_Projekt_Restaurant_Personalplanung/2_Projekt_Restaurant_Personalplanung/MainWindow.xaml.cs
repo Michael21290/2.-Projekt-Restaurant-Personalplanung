@@ -13,30 +13,40 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Data.Entity;
+using _2_Projekt_Restaurant_Personalplanung.Datenmodel;
 
 namespace _2_Projekt_Restaurant_Personalplanung
 {
     /// <summary>
     /// Interaktionslogik für MainWindow.xaml
     /// </summary> 
-   
 
     public partial class MainWindow : Window
     {
         Login login;
         Dienstplan dienstplan;
+        NeuerDienstplan NeuerDienstplan;
         MenueAdmin Menue;
+
+        
+        
+        
         public MainWindow()
         {
-
             InitializeComponent();
-            LoginAnzeigen();
+            LoginAnzeigen(); 
         }
 
         public void MenueAnzeigen()
         {
             Menue = new MenueAdmin(this);
             UserControl.Content = Menue;
+        }
+
+        public void NeuerDienstplanAnzeigen()
+        {
+            NeuerDienstplan = new NeuerDienstplan(this);
+            UserControl.Content = NeuerDienstplan;
         }
 
         public void DienstplanAnzeigen()

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using _2_Projekt_Restaurant_Personalplanung.Datenmodel;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -13,14 +14,13 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using _2_Projekt_Restaurant_Personalplanung.Datenmodel;
 
 namespace _2_Projekt_Restaurant_Personalplanung
 {
     /// <summary>
-    /// Interaktionslogik für Dienstplan.xaml
+    /// Interaktionslogik für NeuerDienstplan.xaml
     /// </summary>
-    public partial class Dienstplan : UserControl
+    public partial class NeuerDienstplan : UserControl
     {
         public ICollectionView CollectionView;
         PersonalplanEntities Context = new PersonalplanEntities();
@@ -32,9 +32,9 @@ namespace _2_Projekt_Restaurant_Personalplanung
 
 
         MainWindow mainWindow;
-        public Dienstplan(MainWindow _mainWindow)
+        public NeuerDienstplan(MainWindow _mainWindow)
         {
-            
+
             InitializeComponent();
             mainWindow = _mainWindow;
         }
@@ -48,7 +48,5 @@ namespace _2_Projekt_Restaurant_Personalplanung
         {
             mainWindow.MenueAnzeigen();
         }
-
-        
     }
 }

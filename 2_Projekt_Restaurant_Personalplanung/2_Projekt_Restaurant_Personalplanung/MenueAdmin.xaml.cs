@@ -39,7 +39,7 @@ namespace _2_Projekt_Restaurant_Personalplanung
 
         private void DienstplanErstellen(object sender, RoutedEventArgs e)
         {
-
+            mainWindow.NeuerDienstplanAnzeigen();
         }
 
         private void Ausloggen(object sender, RoutedEventArgs e)
