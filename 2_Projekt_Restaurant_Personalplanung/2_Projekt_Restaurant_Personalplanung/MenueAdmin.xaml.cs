@@ -16,20 +16,35 @@ using System.Windows.Shapes;
 namespace _2_Projekt_Restaurant_Personalplanung
 {
     /// <summary>
-    /// Interaktionslogik für Login.xaml
+    /// Interaktionslogik für MenueAdmin.xaml
     /// </summary>
-    public partial class Login : UserControl
+    public partial class MenueAdmin : UserControl
     {
         MainWindow mainWindow;
-        public Login(MainWindow _mainWindow)
+        public MenueAdmin(MainWindow _mainWindow)
         {
             InitializeComponent();
             mainWindow = _mainWindow;
         }
 
-        private void Einloggen(object sender, RoutedEventArgs e)
+        private void PlanKücheAnzeigen(object sender, RoutedEventArgs e)
         {
-            mainWindow.MenueAnzeigen();
+            mainWindow.DienstplanAnzeigen();
+        }
+
+        private void PlanServiceAnzeigen(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void DienstplanErstellen(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Ausloggen(object sender, RoutedEventArgs e)
+        {
+            mainWindow.LoginAnzeigen();
         }
     }
 }

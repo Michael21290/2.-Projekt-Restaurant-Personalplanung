@@ -12,7 +12,7 @@
         <TextBox  Name="Username"  Margin="5"></TextBox>
         <TextBlock Text="Passwort" FontSize="20"  Margin="5"></TextBlock>
         <PasswordBox Name="Password"  Margin="5"></PasswordBox>
-        <Button Content="Login" Click="Button_Click" FontSize="15" Margin="5" VerticalAlignment="Center" ></Button>
+        <Button Content="Login" Click="Einloggen" FontSize="15" Margin="5" VerticalAlignment="Center" ></Button>
 
 
     </StackPanel>

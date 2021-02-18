@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="projekt2Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Benutzeraccount">
+    <Key>
+      <PropertyRef Name="ID_Account" />
+    </Key>
+    <Property Name="ID_Account" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Benutzername" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Passwort" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IstAdmin" Type="Boolean" />
+    <Property Name="Angestellter" Type="Int32" />
+    <NavigationProperty Name="Mitarbeiter" Relationship="Self.fk_Angestellter" FromRole="Benutzeraccount" ToRole="Mitarbeiter" />
+  </EntityType>
+  <EntityType Name="Dienstplan">
+    <Key>
+      <PropertyRef Name="ID_Dienstplan" />
+    </Key>
+    <Property Name="ID_Dienstplan" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Kallenderwoche" Type="Int32" />
+    <Property Name="Personalgruppe" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IstAdmin" Type="Boolean" />
+    <Property Name="Wochentag" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Schicht" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="MitarbeiterDienstplan" Relationship="Self.fk_DienstplanID" FromRole="Dienstplan" ToRole="MitarbeiterDienstplan" />
+  </EntityType>
+  <EntityType Name="Mitarbeiter">
+    <Key>
+      <PropertyRef Name="ID_Mitarbeiter" />
+    </Key>
+    <Property Name="ID_Mitarbeiter" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Vorname" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Geburtsdatum" Type="DateTime" Precision="3" />
+    <Property Name="Einstellungsdatum" Type="DateTime" Precision="3" />
+    <Property Name="Stellenbezeichnung" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="IstVerfügbar" Type="Boolean" />
+    <NavigationProperty Name="Benutzeraccount" Relationship="Self.fk_Angestellter" FromRole="Mitarbeiter" ToRole="Benutzeraccount" />
+    <NavigationProperty Name="MitarbeiterDienstplan" Relationship="Self.fk_MitarbeiterID" FromRole="Mitarbeiter" ToRole="MitarbeiterDienstplan" />
+  </EntityType>
+  <EntityType Name="MitarbeiterDienstplan">
+    <Key>
+      <PropertyRef Name="ID_MitarbeiterDienstplan" />
+    </Key>
+    <Property Name="ID_MitarbeiterDienstplan" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MitarbeiterID" Type="Int32" />
+    <Property Name="DienstplanID" Type="Int32" />
+    <NavigationProperty Name="Dienstplan" Relationship="Self.fk_DienstplanID" FromRole="MitarbeiterDienstplan" ToRole="Dienstplan" />
+    <NavigationProperty Name="Mitarbeiter" Relationship="Self.fk_MitarbeiterID" FromRole="MitarbeiterDienstplan" ToRole="Mitarbeiter" />
+  </EntityType>
+  <Association Name="fk_Angestellter">
+    <End Role="Mitarbeiter" Type="Self.Mitarbeiter" Multiplicity="0..1" />
+    <End Role="Benutzeraccount" Type="Self.Benutzeraccount" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Mitarbeiter">
+        <PropertyRef Name="ID_Mitarbeiter" />
+      </Principal>
+      <Dependent Role="Benutzeraccount">
+        <PropertyRef Name="Angestellter" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_DienstplanID">
+    <End Role="Dienstplan" Type="Self.Dienstplan" Multiplicity="0..1" />
+    <End Role="MitarbeiterDienstplan" Type="Self.MitarbeiterDienstplan" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Dienstplan">
+        <PropertyRef Name="ID_Dienstplan" />
+      </Principal>
+      <Dependent Role="MitarbeiterDienstplan">
+        <PropertyRef Name="DienstplanID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_MitarbeiterID">
+    <End Role="Mitarbeiter" Type="Self.Mitarbeiter" Multiplicity="0..1" />
+    <End Role="MitarbeiterDienstplan" Type="Self.MitarbeiterDienstplan" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Mitarbeiter">
+        <PropertyRef Name="ID_Mitarbeiter" />
+      </Principal>
+      <Dependent Role="MitarbeiterDienstplan">
+        <PropertyRef Name="MitarbeiterID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="PersonalplanEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Benutzeraccount" EntityType="Self.Benutzeraccount" />
+    <EntitySet Name="Dienstplan" EntityType="Self.Dienstplan" />
+    <EntitySet Name="Mitarbeiter" EntityType="Self.Mitarbeiter" />
+    <EntitySet Name="MitarbeiterDienstplan" EntityType="Self.MitarbeiterDienstplan" />
+    <AssociationSet Name="fk_Angestellter" Association="Self.fk_Angestellter">
+      <End Role="Mitarbeiter" EntitySet="Mitarbeiter" />
+      <End Role="Benutzeraccount" EntitySet="Benutzeraccount" />
+    </AssociationSet>
+    <AssociationSet Name="fk_DienstplanID" Association="Self.fk_DienstplanID">
+      <End Role="Dienstplan" EntitySet="Dienstplan" />
+      <End Role="MitarbeiterDienstplan" EntitySet="MitarbeiterDienstplan" />
+    </AssociationSet>
+    <AssociationSet Name="fk_MitarbeiterID" Association="Self.fk_MitarbeiterID">
+      <End Role="Mitarbeiter" EntitySet="Mitarbeiter" />
+      <End Role="MitarbeiterDienstplan" EntitySet="MitarbeiterDienstplan" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

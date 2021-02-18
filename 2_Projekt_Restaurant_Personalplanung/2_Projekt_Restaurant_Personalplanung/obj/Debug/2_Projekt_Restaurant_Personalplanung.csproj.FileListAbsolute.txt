@@ -41,3 +41,8 @@ C:\Users\gerbm\Desktop\2.-Projekt-Restaurant-Personalplanung\2_Projekt_Restauran
 C:\Users\gerbm\Desktop\2.-Projekt-Restaurant-Personalplanung\2_Projekt_Restaurant_Personalplanung\2_Projekt_Restaurant_Personalplanung\obj\Debug\2_Projekt_Restaurant_Personalplanung.csproj.CopyComplete
 C:\Users\gerbm\Desktop\2.-Projekt-Restaurant-Personalplanung\2_Projekt_Restaurant_Personalplanung\2_Projekt_Restaurant_Personalplanung\obj\Debug\2_Projekt_Restaurant_Personalplanung.exe
 C:\Users\gerbm\Desktop\2.-Projekt-Restaurant-Personalplanung\2_Projekt_Restaurant_Personalplanung\2_Projekt_Restaurant_Personalplanung\obj\Debug\2_Projekt_Restaurant_Personalplanung.pdb
+C:\Users\gerbm\Desktop\2.-Projekt-Restaurant-Personalplanung\2_Projekt_Restaurant_Personalplanung\2_Projekt_Restaurant_Personalplanung\obj\Debug\2_Projekt_Restaurant_Personalplanung_Content.g.cs
+C:\Users\gerbm\Desktop\2.-Projekt-Restaurant-Personalplanung\2_Projekt_Restaurant_Personalplanung\2_Projekt_Restaurant_Personalplanung\obj\Debug\MenueAdmin.g.cs
+C:\Users\gerbm\Desktop\2.-Projekt-Restaurant-Personalplanung\2_Projekt_Restaurant_Personalplanung\2_Projekt_Restaurant_Personalplanung\obj\Debug\MenueAngestellte.g.cs
+C:\Users\gerbm\Desktop\2.-Projekt-Restaurant-Personalplanung\2_Projekt_Restaurant_Personalplanung\2_Projekt_Restaurant_Personalplanung\obj\Debug\MenueAdmin.baml
+C:\Users\gerbm\Desktop\2.-Projekt-Restaurant-Personalplanung\2_Projekt_Restaurant_Personalplanung\2_Projekt_Restaurant_Personalplanung\obj\Debug\MenueAngestellte.baml

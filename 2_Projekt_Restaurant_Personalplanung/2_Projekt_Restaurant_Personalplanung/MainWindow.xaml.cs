@@ -25,20 +25,29 @@ namespace _2_Projekt_Restaurant_Personalplanung
     {
         Login login;
         Dienstplan dienstplan;
+        MenueAdmin Menue;
         public MainWindow()
         {
 
             InitializeComponent();
             LoginAnzeigen();
         }
+
+        public void MenueAnzeigen()
+        {
+            Menue = new MenueAdmin(this);
+            UserControl.Content = Menue;
+        }
+
         public void DienstplanAnzeigen()
         {
             dienstplan = new Dienstplan(this);
             UserControl.Content = dienstplan;
         }
+
         public void LoginAnzeigen()
         {
-            Login login = new Login(this);
+            login = new Login(this);
             UserControl.Content = login;
         }
     }

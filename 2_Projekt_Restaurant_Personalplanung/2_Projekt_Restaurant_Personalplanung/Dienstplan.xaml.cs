@@ -27,9 +27,9 @@ namespace _2_Projekt_Restaurant_Personalplanung
             mainWindow = _mainWindow;
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void ZurückZumMenue(object sender, RoutedEventArgs e)
         {
-            mainWindow.LoginAnzeigen();
+            mainWindow.MenueAnzeigen();
         }
     }
 }

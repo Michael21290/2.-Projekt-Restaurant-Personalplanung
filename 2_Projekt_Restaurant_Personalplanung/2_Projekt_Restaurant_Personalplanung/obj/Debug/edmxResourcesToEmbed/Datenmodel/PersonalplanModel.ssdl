@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="projekt2Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Benutzeraccount">
+    <Key>
+      <PropertyRef Name="ID_Account" />
+    </Key>
+    <Property Name="ID_Account" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Benutzername" Type="nvarchar" MaxLength="50" />
+    <Property Name="Passwort" Type="nvarchar" MaxLength="50" />
+    <Property Name="IstAdmin" Type="bit" />
+    <Property Name="Angestellter" Type="int" />
+  </EntityType>
+  <EntityType Name="Dienstplan">
+    <Key>
+      <PropertyRef Name="ID_Dienstplan" />
+    </Key>
+    <Property Name="ID_Dienstplan" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Kallenderwoche" Type="int" />
+    <Property Name="Personalgruppe" Type="nvarchar" MaxLength="50" />
+    <Property Name="IstAdmin" Type="bit" />
+    <Property Name="Wochentag" Type="nvarchar" MaxLength="50" />
+    <Property Name="Schicht" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Mitarbeiter">
+    <Key>
+      <PropertyRef Name="ID_Mitarbeiter" />
+    </Key>
+    <Property Name="ID_Mitarbeiter" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="500" />
+    <Property Name="Vorname" Type="nvarchar" MaxLength="500" />
+    <Property Name="Geburtsdatum" Type="datetime" />
+    <Property Name="Einstellungsdatum" Type="datetime" />
+    <Property Name="Stellenbezeichnung" Type="nvarchar" MaxLength="500" />
+    <Property Name="Email" Type="nvarchar" MaxLength="500" />
+    <Property Name="IstVerfügbar" Type="bit" />
+  </EntityType>
+  <EntityType Name="MitarbeiterDienstplan">
+    <Key>
+      <PropertyRef Name="ID_MitarbeiterDienstplan" />
+    </Key>
+    <Property Name="ID_MitarbeiterDienstplan" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MitarbeiterID" Type="int" />
+    <Property Name="DienstplanID" Type="int" />
+  </EntityType>
+  <Association Name="fk_Angestellter">
+    <End Role="Mitarbeiter" Type="Self.Mitarbeiter" Multiplicity="0..1" />
+    <End Role="Benutzeraccount" Type="Self.Benutzeraccount" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Mitarbeiter">
+        <PropertyRef Name="ID_Mitarbeiter" />
+      </Principal>
+      <Dependent Role="Benutzeraccount">
+        <PropertyRef Name="Angestellter" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_DienstplanID">
+    <End Role="Dienstplan" Type="Self.Dienstplan" Multiplicity="0..1" />
+    <End Role="MitarbeiterDienstplan" Type="Self.MitarbeiterDienstplan" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Dienstplan">
+        <PropertyRef Name="ID_Dienstplan" />
+      </Principal>
+      <Dependent Role="MitarbeiterDienstplan">
+        <PropertyRef Name="DienstplanID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_MitarbeiterID">
+    <End Role="Mitarbeiter" Type="Self.Mitarbeiter" Multiplicity="0..1" />
+    <End Role="MitarbeiterDienstplan" Type="Self.MitarbeiterDienstplan" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Mitarbeiter">
+        <PropertyRef Name="ID_Mitarbeiter" />
+      </Principal>
+      <Dependent Role="MitarbeiterDienstplan">
+        <PropertyRef Name="MitarbeiterID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="projekt2ModelStoreContainer">
+    <EntitySet Name="Benutzeraccount" EntityType="Self.Benutzeraccount" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Dienstplan" EntityType="Self.Dienstplan" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Mitarbeiter" EntityType="Self.Mitarbeiter" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MitarbeiterDienstplan" EntityType="Self.MitarbeiterDienstplan" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="fk_Angestellter" Association="Self.fk_Angestellter">
+      <End Role="Mitarbeiter" EntitySet="Mitarbeiter" />
+      <End Role="Benutzeraccount" EntitySet="Benutzeraccount" />
+    </AssociationSet>
+    <AssociationSet Name="fk_DienstplanID" Association="Self.fk_DienstplanID">
+      <End Role="Dienstplan" EntitySet="Dienstplan" />
+      <End Role="MitarbeiterDienstplan" EntitySet="MitarbeiterDienstplan" />
+    </AssociationSet>
+    <AssociationSet Name="fk_MitarbeiterID" Association="Self.fk_MitarbeiterID">
+      <End Role="Mitarbeiter" EntitySet="Mitarbeiter" />
+      <End Role="MitarbeiterDienstplan" EntitySet="MitarbeiterDienstplan" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

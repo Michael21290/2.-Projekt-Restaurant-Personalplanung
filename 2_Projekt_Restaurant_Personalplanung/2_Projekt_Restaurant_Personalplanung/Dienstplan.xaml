@@ -72,6 +72,6 @@
 
 
 
-        <Button Margin="3" Width="300" Grid.ColumnSpan="4" Content="Ausloggen" FontWeight="Bold" Click="Button_Click" Grid.Row="16"></Button>
+        <Button Margin="3" Width="300" Grid.ColumnSpan="4" Content="Zurück zum Menü" FontWeight="Bold" Click="ZurückZumMenue" Grid.Row="16"></Button>
     </Grid>
 </UserControl>
