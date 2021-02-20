@@ -29,7 +29,35 @@ namespace _2_Projekt_Restaurant_Personalplanung
 
         private void Einloggen(object sender, RoutedEventArgs e)
         {
-            mainWindow.MenueAnzeigen();
+            try
+            {
+                using (PersonalplanEntities db = new PersonalplanEntities())
+                {
+                    var list = db.Benutzeraccount.Where(x => x.Benutzername == Username.Text && x.Passwort == Password.Password).ToList();
+                    foreach (var b in list)
+                    {
+                        if (b.IstAdmin == true)
+                        {
+
+                            mainWindow.MenueAnzeigen();
+                            return;
+                        }
+                        else if (b.IstAdmin == false)
+                        {
+
+                            mainWindow.DienstplanAnzeigen();
+                            return;
+                        }
+                    }
+                    MessageBox.Show("Benutzername oder Passwort falsch!");
+                    Username.Text = "";
+                    Password.Password = "";
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Message");
+            }
         }
     }
 }

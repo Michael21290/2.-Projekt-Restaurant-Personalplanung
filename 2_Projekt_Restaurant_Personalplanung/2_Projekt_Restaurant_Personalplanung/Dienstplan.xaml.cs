@@ -70,5 +70,24 @@ namespace _2_Projekt_Restaurant_Personalplanung
         {
             mainWindow.MenueAnzeigen();
         }
+
+        private void Drucken(object sender, RoutedEventArgs e)
+        {
+            
+                try
+                {
+                    this.IsEnabled = false;
+                    PrintDialog printDialog = new PrintDialog();
+                    if (printDialog.ShowDialog() == true)
+                    {
+                        printDialog.PrintVisual(MainGrid, "Dienstplan");
+                    }
+                }
+                finally
+                {
+                    this.IsEnabled = true;
+                }
+            
+        }
     }
 }

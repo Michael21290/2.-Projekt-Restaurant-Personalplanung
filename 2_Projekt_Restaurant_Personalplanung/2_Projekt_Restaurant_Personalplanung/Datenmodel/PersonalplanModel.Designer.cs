@@ -1,4 +1,4 @@
-﻿// Die T4-Codegenerierung ist für Modell 'C:\Users\gerbm\Desktop\2.-Projekt-Restaurant-Personalplanung\2_Projekt_Restaurant_Personalplanung\2_Projekt_Restaurant_Personalplanung\Datenmodel\PersonalplanModel.edmx' aktiviert. 
+﻿// Die T4-Codegenerierung ist für Modell 'C:\Users\janzi\Desktop\2.-Projekt-Restaurant-Personalplanung\2_Projekt_Restaurant_Personalplanung\2_Projekt_Restaurant_Personalplanung\Datenmodel\PersonalplanModel.edmx' aktiviert. 
 // Um die Generierung von Legacycode zu aktivieren, ändern Sie den Wert der Designer-Eigenschaft 'Code Generation Strategy'
 // in 'Legacy ObjectContext'. Diese Eigenschaft wird im Eigenschaftenfenster angezeigt, wenn das Modell
 // im Designer geöffnet ist.
