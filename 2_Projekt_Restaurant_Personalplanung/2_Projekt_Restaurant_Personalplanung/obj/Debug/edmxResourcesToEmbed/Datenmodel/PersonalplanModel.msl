@@ -18,7 +18,15 @@
           <ScalarProperty Name="ID_Dienstplan" ColumnName="ID_Dienstplan" />
           <ScalarProperty Name="Kallenderwoche" ColumnName="Kallenderwoche" />
           <ScalarProperty Name="Jahr" ColumnName="Jahr" />
-          <ScalarProperty Name="Personalgruppe" ColumnName="Personalgruppe" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EingeteilteMitarbeiter">
+      <EntityTypeMapping TypeName="PersonalplanModel.EingeteilterMitarbeiter">
+        <MappingFragment StoreEntitySet="EingeteilterMitarbeiter">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="ID_Wochentag" ColumnName="ID_Wochentag" />
+          <ScalarProperty Name="ID_Schicht" ColumnName="ID_Schicht" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -36,21 +44,11 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="MitarbeiterSchichten">
-      <EntityTypeMapping TypeName="PersonalplanModel.MitarbeiterSchicht">
-        <MappingFragment StoreEntitySet="MitarbeiterSchicht">
-          <ScalarProperty Name="Mitarbeitername" ColumnName="Mitarbeitername" />
-          <ScalarProperty Name="ID_Mitarbeiter" ColumnName="ID_Mitarbeiter" />
-          <ScalarProperty Name="ID_Schicht" ColumnName="ID_Schicht" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="Schichten">
       <EntityTypeMapping TypeName="PersonalplanModel.Schicht">
         <MappingFragment StoreEntitySet="Schicht">
           <ScalarProperty Name="ID_Schicht" ColumnName="ID_Schicht" />
           <ScalarProperty Name="Bezeichnung" ColumnName="Bezeichnung" />
-          <ScalarProperty Name="Tag" ColumnName="Tag" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -59,9 +57,16 @@
         <MappingFragment StoreEntitySet="Wochentag">
           <ScalarProperty Name="ID_Wochentag" ColumnName="ID_Wochentag" />
           <ScalarProperty Name="Bezeichnung" ColumnName="Bezeichnung" />
-          <ScalarProperty Name="PersPlan" ColumnName="PersPlan" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <AssociationSetMapping Name="DienstplanTag" TypeName="PersonalplanModel.DienstplanTag" StoreEntitySet="DienstplanTag">
+      <EndProperty Name="Dienstplan">
+        <ScalarProperty Name="ID_Dienstplan" ColumnName="ID_Dienstplan" />
+      </EndProperty>
+      <EndProperty Name="Wochentag">
+        <ScalarProperty Name="ID_Wochentag" ColumnName="ID_Wochentag" />
+      </EndProperty>
+    </AssociationSetMapping>
   </EntityContainerMapping>
 </Mapping>

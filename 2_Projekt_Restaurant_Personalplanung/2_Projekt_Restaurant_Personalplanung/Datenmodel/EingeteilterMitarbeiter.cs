@@ -12,13 +12,13 @@ namespace _2_Projekt_Restaurant_Personalplanung.Datenmodel
     using System;
     using System.Collections.Generic;
     
-    public partial class MitarbeiterSchicht
+    public partial class EingeteilterMitarbeiter
     {
-        public string Mitarbeitername { get; set; }
-        public int ID_Mitarbeiter { get; set; }
+        public string name { get; set; }
+        public int ID_Wochentag { get; set; }
         public int ID_Schicht { get; set; }
     
-        public virtual Mitarbeiter Mitarbeiter { get; set; }
         public virtual Schicht Schicht { get; set; }
+        public virtual Wochentag Wochentag { get; set; }
     }
 }

@@ -23,7 +23,6 @@ namespace _2_Projekt_Restaurant_Personalplanung.Datenmodel
         public int ID_Dienstplan { get; set; }
         public Nullable<int> Kallenderwoche { get; set; }
         public Nullable<int> Jahr { get; set; }
-        public string Personalgruppe { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Wochentag> Wochentag { get; set; }
