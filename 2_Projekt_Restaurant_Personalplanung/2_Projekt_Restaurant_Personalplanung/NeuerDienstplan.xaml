@@ -28,21 +28,43 @@
             <RowDefinition Height="auto"></RowDefinition>
         </Grid.RowDefinitions>
 
-        <Label Content="Dienstplan Küchenpersonal" FontWeight="Bold" Grid.ColumnSpan="4" HorizontalAlignment="Center" VerticalAlignment="Stretch"/>
+        <StackPanel Orientation="Horizontal" Grid.ColumnSpan="4" HorizontalAlignment="Center">
+            <Label Content="Dienstplan" FontWeight="Bold" Grid.ColumnSpan="4" HorizontalAlignment="Center" VerticalAlignment="Stretch"/>
+            <ComboBox FontWeight="Bold" Width="130" Name="Stellengruppe">
+                <ComboBoxItem Content="Küchenpersonal"></ComboBoxItem>
+                <ComboBoxItem Content="Servicepersonal"></ComboBoxItem>
+            </ComboBox>
+        </StackPanel>
 
-        <Label Content="Montag" FontWeight="Bold" VerticalAlignment="Center" HorizontalContentAlignment="Center" Grid.Row="2" HorizontalAlignment="Center"/>
-        <Label Content="Dienstag" FontWeight="Bold" VerticalAlignment="Center" HorizontalContentAlignment="Center" Grid.Row="3" HorizontalAlignment="Center"/>
-        <Label Content="Mittwoch" FontWeight="Bold" VerticalAlignment="Center" HorizontalContentAlignment="Center" Grid.Row="4" HorizontalAlignment="Center"/>
-        <Label Content="Donnerstag" FontWeight="Bold" VerticalAlignment="Center" HorizontalContentAlignment="Center" Grid.Row="5" HorizontalAlignment="Center"/>
-        <Label Content="Freitag" FontWeight="Bold" VerticalAlignment="Center" HorizontalContentAlignment="Center" Grid.Row="6" HorizontalAlignment="Center"/>
-        <Label Content="Samstag" FontWeight="Bold" VerticalAlignment="Center" HorizontalContentAlignment="Center" Grid.Row="7" HorizontalAlignment="Center"/>
-        <Label Content="Sonntag" FontWeight="Bold" VerticalAlignment="Center" HorizontalContentAlignment="Center" Grid.Row="8" HorizontalAlignment="Center"/>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition ></ColumnDefinition>
+                <ColumnDefinition Width="auto"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <Label Content="KW:" FontWeight="Bold"/>
+            <TextBox Name="Kallenderwoche" FontWeight="Bold" Grid.Column="1" Width="50"></TextBox>
 
-        <TextBlock FontWeight="Bold" Grid.Column="1" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center">Frühschicht<LineBreak/>08:00 - 13:00</TextBlock>
-        <TextBlock FontWeight="Bold" Grid.Column="2" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center">Mittagsschicht<LineBreak/>13:00 - 18:00</TextBlock>
-        <TextBlock FontWeight="Bold" Grid.Column="3" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center">Spätschicht<LineBreak/>18:00 - 23:00</TextBlock>
+            <Label Content="Jahr:" FontWeight="Bold" Grid.Row="1"/>
+            <TextBox Name="Jahr" FontWeight="Bold" Grid.Row="1" Grid.Column="1" Width="50"></TextBox>
+        </Grid>
 
-        <ListView Grid.Row="2" Grid.Column="1" ItemsSource="{Binding}" HorizontalAlignment="Stretch" >
+        <Label Name="Montag" Content="Montag" FontWeight="Bold" VerticalAlignment="Center" HorizontalContentAlignment="Center" Grid.Row="2" HorizontalAlignment="Center"/>
+        <Label Name="Dienstag" Content="Dienstag" FontWeight="Bold" VerticalAlignment="Center" HorizontalContentAlignment="Center" Grid.Row="3" HorizontalAlignment="Center"/>
+        <Label Name="Mittwoch" Content="Mittwoch" FontWeight="Bold" VerticalAlignment="Center" HorizontalContentAlignment="Center" Grid.Row="4" HorizontalAlignment="Center"/>
+        <Label Name="Donnerstag" Content="Donnerstag" FontWeight="Bold" VerticalAlignment="Center" HorizontalContentAlignment="Center" Grid.Row="5" HorizontalAlignment="Center"/>
+        <Label Name="Freitag" Content="Freitag" FontWeight="Bold" VerticalAlignment="Center" HorizontalContentAlignment="Center" Grid.Row="6" HorizontalAlignment="Center"/>
+        <Label Name="Samstag" Content="Samstag" FontWeight="Bold" VerticalAlignment="Center" HorizontalContentAlignment="Center" Grid.Row="7" HorizontalAlignment="Center"/>
+        <Label Name="Sonntag" Content="Sonntag" FontWeight="Bold" VerticalAlignment="Center" HorizontalContentAlignment="Center" Grid.Row="8" HorizontalAlignment="Center"/>
+
+        <TextBlock FontWeight="Bold" Grid.Column="1" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center" TextAlignment="Center">Frühschicht<LineBreak/>08:00 - 13:00</TextBlock>
+        <TextBlock FontWeight="Bold" Grid.Column="2" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center" TextAlignment="Center">Mittagsschicht<LineBreak/>13:00 - 18:00</TextBlock>
+        <TextBlock FontWeight="Bold" Grid.Column="3" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center" TextAlignment="Center">Spätschicht<LineBreak/>18:00 - 23:00</TextBlock>
+
+        <ListView Name="mo1" Grid.Row="2" Grid.Column="1" ItemsSource="{Binding}" HorizontalAlignment="Stretch" >
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">
@@ -54,7 +76,7 @@
             </ListView.ItemTemplate>
         </ListView>
 
-        <ListView Grid.Row="2" Grid.Column="2" ItemsSource="{Binding}" HorizontalAlignment="Stretch" >
+        <ListView Name="mo2" Grid.Row="2" Grid.Column="2" ItemsSource="{Binding}" HorizontalAlignment="Stretch" >
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">
@@ -66,7 +88,7 @@
             </ListView.ItemTemplate>
         </ListView>
 
-        <ListView Grid.Row="2" Grid.Column="3" ItemsSource="{Binding}" HorizontalAlignment="Stretch" >
+        <ListView Name="mo3" Grid.Row="2" Grid.Column="3" ItemsSource="{Binding}" HorizontalAlignment="Stretch" >
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">
@@ -78,7 +100,7 @@
             </ListView.ItemTemplate>
         </ListView>
 
-        <ListView Grid.Row="3" Grid.Column="1" ItemsSource="{Binding}" HorizontalAlignment="Stretch" >
+        <ListView Name="di1" Grid.Row="3" Grid.Column="1" ItemsSource="{Binding}" HorizontalAlignment="Stretch" >
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">
@@ -90,7 +112,7 @@
             </ListView.ItemTemplate>
         </ListView>
 
-        <ListView Grid.Row="3" Grid.Column="2" ItemsSource="{Binding}" HorizontalAlignment="Stretch" >
+        <ListView Name="di2" Grid.Row="3" Grid.Column="2" ItemsSource="{Binding}" HorizontalAlignment="Stretch" >
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">
@@ -102,7 +124,7 @@
             </ListView.ItemTemplate>
         </ListView>
 
-        <ListView Grid.Row="3" Grid.Column="3" ItemsSource="{Binding}" HorizontalAlignment="Stretch" >
+        <ListView Name="di3" Grid.Row="3" Grid.Column="3" ItemsSource="{Binding}" HorizontalAlignment="Stretch" >
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">
@@ -114,7 +136,7 @@
             </ListView.ItemTemplate>
         </ListView>
 
-        <ListView Grid.Row="4" Grid.Column="1" ItemsSource="{Binding}" HorizontalAlignment="Stretch" >
+        <ListView Name="mi1" Grid.Row="4" Grid.Column="1" ItemsSource="{Binding}" HorizontalAlignment="Stretch" >
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">
@@ -126,7 +148,7 @@
             </ListView.ItemTemplate>
         </ListView>
 
-        <ListView Grid.Row="4" Grid.Column="2" ItemsSource="{Binding}" HorizontalAlignment="Stretch" >
+        <ListView Name="mi2" Grid.Row="4" Grid.Column="2" ItemsSource="{Binding}" HorizontalAlignment="Stretch" >
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">
@@ -138,7 +160,7 @@
             </ListView.ItemTemplate>
         </ListView>
 
-        <ListView Grid.Row="4" Grid.Column="3" ItemsSource="{Binding}" HorizontalAlignment="Stretch" >
+        <ListView Name="mi3" Grid.Row="4" Grid.Column="3" ItemsSource="{Binding}" HorizontalAlignment="Stretch" >
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">
@@ -150,7 +172,7 @@
             </ListView.ItemTemplate>
         </ListView>
 
-        <ListView Grid.Row="5" Grid.Column="1" ItemsSource="{Binding}" HorizontalAlignment="Stretch" >
+        <ListView Name="do1" Grid.Row="5" Grid.Column="1" ItemsSource="{Binding}" HorizontalAlignment="Stretch" >
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">
@@ -162,7 +184,7 @@
             </ListView.ItemTemplate>
         </ListView>
 
-        <ListView Grid.Row="5" Grid.Column="2" ItemsSource="{Binding}" HorizontalAlignment="Stretch" >
+        <ListView Name="do2" Grid.Row="5" Grid.Column="2" ItemsSource="{Binding}" HorizontalAlignment="Stretch" >
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">
@@ -174,7 +196,7 @@
             </ListView.ItemTemplate>
         </ListView>
 
-        <ListView Grid.Row="5" Grid.Column="3" ItemsSource="{Binding}" HorizontalAlignment="Stretch" >
+        <ListView Name="do3" Grid.Row="5" Grid.Column="3" ItemsSource="{Binding}" HorizontalAlignment="Stretch" >
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">
@@ -186,7 +208,7 @@
             </ListView.ItemTemplate>
         </ListView>
 
-        <ListView Grid.Row="6" Grid.Column="1" ItemsSource="{Binding}" HorizontalAlignment="Stretch" >
+        <ListView Name="fr1" Grid.Row="6" Grid.Column="1" ItemsSource="{Binding}" HorizontalAlignment="Stretch" >
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">
@@ -198,7 +220,7 @@
             </ListView.ItemTemplate>
         </ListView>
 
-        <ListView Grid.Row="6" Grid.Column="2" ItemsSource="{Binding}" HorizontalAlignment="Stretch" >
+        <ListView Name="fr2" Grid.Row="6" Grid.Column="2" ItemsSource="{Binding}" HorizontalAlignment="Stretch" >
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">
@@ -210,7 +232,7 @@
             </ListView.ItemTemplate>
         </ListView>
 
-        <ListView Grid.Row="6" Grid.Column="3" ItemsSource="{Binding}" HorizontalAlignment="Stretch" >
+        <ListView Name="fr3" Grid.Row="6" Grid.Column="3" ItemsSource="{Binding}" HorizontalAlignment="Stretch" >
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">
@@ -222,7 +244,7 @@
             </ListView.ItemTemplate>
         </ListView>
 
-        <ListView Grid.Row="7" Grid.Column="1" ItemsSource="{Binding}" HorizontalAlignment="Stretch" >
+        <ListView Name="sa1" Grid.Row="7" Grid.Column="1" ItemsSource="{Binding}" HorizontalAlignment="Stretch" >
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">
@@ -234,7 +256,7 @@
             </ListView.ItemTemplate>
         </ListView>
 
-        <ListView Grid.Row="7" Grid.Column="2" ItemsSource="{Binding}" HorizontalAlignment="Stretch" >
+        <ListView Name="sa2" Grid.Row="7" Grid.Column="2" ItemsSource="{Binding}" HorizontalAlignment="Stretch" >
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">
@@ -246,7 +268,7 @@
             </ListView.ItemTemplate>
         </ListView>
 
-        <ListView Grid.Row="7" Grid.Column="3" ItemsSource="{Binding}" HorizontalAlignment="Stretch" >
+        <ListView Name="sa3" Grid.Row="7" Grid.Column="3" ItemsSource="{Binding}" HorizontalAlignment="Stretch" >
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">
@@ -258,7 +280,7 @@
             </ListView.ItemTemplate>
         </ListView>
 
-        <ListView Grid.Row="8" Grid.Column="1" ItemsSource="{Binding}" HorizontalAlignment="Stretch" >
+        <ListView Name="so1" Grid.Row="8" Grid.Column="1" ItemsSource="{Binding}" HorizontalAlignment="Stretch" >
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">
@@ -270,7 +292,7 @@
             </ListView.ItemTemplate>
         </ListView>
 
-        <ListView Grid.Row="8" Grid.Column="2" ItemsSource="{Binding}" HorizontalAlignment="Stretch" >
+        <ListView Name="so2" Grid.Row="8" Grid.Column="2" ItemsSource="{Binding}" HorizontalAlignment="Stretch" >
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">
@@ -282,7 +304,7 @@
             </ListView.ItemTemplate>
         </ListView>
 
-        <ListView Grid.Row="8" Grid.Column="3" ItemsSource="{Binding}" HorizontalAlignment="Stretch" >
+        <ListView Name="so3" Grid.Row="8" Grid.Column="3" ItemsSource="{Binding}" HorizontalAlignment="Stretch" >
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">
@@ -294,7 +316,7 @@
             </ListView.ItemTemplate>
         </ListView>
 
-        <Button Margin="3" Width="250" Grid.ColumnSpan="4" Content="Dienstplan Speichern" FontWeight="Bold" Click="Speichern" Grid.Row="16"></Button>
-        <Button Margin="3" Width="250" Grid.ColumnSpan="4" Content="Zurück zum Menü" FontWeight="Bold" Click="ZurückZumMenue" Grid.Row="16"></Button>
+        <Button Margin="100,3,450,3" Width="250" Grid.ColumnSpan="4" Content="Dienstplan Speichern" FontWeight="Bold" Click="Speichern" Grid.Row="16"></Button>
+        <Button Margin="450,3,100,3" Width="250" Grid.ColumnSpan="4" Content="Zurück zum Menü" FontWeight="Bold" Click="ZurueckZumMenue" Grid.Row="16"></Button>
     </Grid>
 </UserControl>

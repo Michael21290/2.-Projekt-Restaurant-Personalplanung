@@ -92,7 +92,7 @@
     <Compile Include="Datenmodel\Mitarbeiter.cs">
       <DependentUpon>PersonalplanModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Datenmodel\MitarbeiterDienstplan.cs">
+    <Compile Include="Datenmodel\MitarbeiterSchicht.cs">
       <DependentUpon>PersonalplanModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Datenmodel\PersonalplanModel.Context.cs">
@@ -109,6 +109,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>PersonalplanModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Datenmodel\Schicht.cs">
+      <DependentUpon>PersonalplanModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Datenmodel\Wochentag.cs">
+      <DependentUpon>PersonalplanModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Dienstplan.xaml.cs">
       <DependentUpon>Dienstplan.xaml</DependentUpon>
@@ -179,7 +185,6 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <Content Include="Datenmodel\PersonalplanModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>

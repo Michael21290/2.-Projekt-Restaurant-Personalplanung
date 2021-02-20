@@ -4,14 +4,18 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="2438761cdc77420b9b77a01ca54cb46c" Name="Diagram1">
-        <EntityTypeShape EntityType="projekt2Model.Benutzeraccount" Width="1.5" PointX="9.25" PointY="0.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="projekt2Model.Dienstplan" Width="1.5" PointX="1" PointY="0.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="projekt2Model.Mitarbeiter" Width="1.5" PointX="6.375" PointY="0.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="projekt2Model.MitarbeiterDienstplan" Width="1.5" PointX="3.625" PointY="0.75" IsExpanded="true" />
-        <AssociationConnector Association="projekt2Model.fk_Angestellter" ManuallyRouted="false" />
-        <AssociationConnector Association="projekt2Model.fk_DienstplanID" ManuallyRouted="false" />
-        <AssociationConnector Association="projekt2Model.fk_MitarbeiterID" ManuallyRouted="false" />
+      <Diagram DiagramId="0b565e56ee594b34af740548509f49c4" Name="Diagram1">
+        <EntityTypeShape EntityType="PersonalplanModel.Benutzeraccount" Width="1.5" PointX="7.5" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="PersonalplanModel.Dienstplan" Width="1.5" PointX="0.75" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="PersonalplanModel.Mitarbeiter" Width="1.5" PointX="5.25" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="PersonalplanModel.MitarbeiterSchicht" Width="1.5" PointX="7.5" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="PersonalplanModel.Schicht" Width="1.5" PointX="5.25" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="PersonalplanModel.Wochentag" Width="1.5" PointX="3" PointY="0.875" IsExpanded="true" />
+        <AssociationConnector Association="PersonalplanModel.fk_Angestellter" ManuallyRouted="false" />
+        <AssociationConnector Association="PersonalplanModel.fk_PersPlan" ManuallyRouted="false" />
+        <AssociationConnector Association="PersonalplanModel.fk_Mitarbeiter" ManuallyRouted="false" />
+        <AssociationConnector Association="PersonalplanModel.fk_Schicht" ManuallyRouted="false" />
+        <AssociationConnector Association="PersonalplanModel.fk_Tag" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

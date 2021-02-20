@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="projekt2Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+<Schema Namespace="PersonalplanModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
   <EntityType Name="Benutzeraccount">
     <Key>
       <PropertyRef Name="ID_Account" />
@@ -16,10 +16,8 @@
     </Key>
     <Property Name="ID_Dienstplan" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Kallenderwoche" Type="int" />
+    <Property Name="Jahr" Type="int" />
     <Property Name="Personalgruppe" Type="nvarchar" MaxLength="50" />
-    <Property Name="IstAdmin" Type="bit" />
-    <Property Name="Wochentag" Type="nvarchar" MaxLength="50" />
-    <Property Name="Schicht" Type="nvarchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="Mitarbeiter">
     <Key>
@@ -34,13 +32,30 @@
     <Property Name="Email" Type="nvarchar" MaxLength="500" />
     <Property Name="IstVerfügbar" Type="bit" />
   </EntityType>
-  <EntityType Name="MitarbeiterDienstplan">
+  <EntityType Name="MitarbeiterSchicht">
     <Key>
-      <PropertyRef Name="ID_MitarbeiterDienstplan" />
+      <PropertyRef Name="ID_Mitarbeiter" />
+      <PropertyRef Name="ID_Schicht" />
     </Key>
-    <Property Name="ID_MitarbeiterDienstplan" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="MitarbeiterID" Type="int" />
-    <Property Name="DienstplanID" Type="int" />
+    <Property Name="Mitarbeitername" Type="nvarchar" MaxLength="50" />
+    <Property Name="ID_Mitarbeiter" Type="int" Nullable="false" />
+    <Property Name="ID_Schicht" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Schicht">
+    <Key>
+      <PropertyRef Name="ID_Schicht" />
+    </Key>
+    <Property Name="ID_Schicht" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Bezeichnung" Type="nvarchar" MaxLength="50" />
+    <Property Name="Tag" Type="int" />
+  </EntityType>
+  <EntityType Name="Wochentag">
+    <Key>
+      <PropertyRef Name="ID_Wochentag" />
+    </Key>
+    <Property Name="ID_Wochentag" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Bezeichnung" Type="nvarchar" MaxLength="50" />
+    <Property Name="PersPlan" Type="int" />
   </EntityType>
   <Association Name="fk_Angestellter">
     <End Role="Mitarbeiter" Type="Self.Mitarbeiter" Multiplicity="0..1" />
@@ -54,46 +69,80 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="fk_DienstplanID">
-    <End Role="Dienstplan" Type="Self.Dienstplan" Multiplicity="0..1" />
-    <End Role="MitarbeiterDienstplan" Type="Self.MitarbeiterDienstplan" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Dienstplan">
-        <PropertyRef Name="ID_Dienstplan" />
-      </Principal>
-      <Dependent Role="MitarbeiterDienstplan">
-        <PropertyRef Name="DienstplanID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="fk_MitarbeiterID">
-    <End Role="Mitarbeiter" Type="Self.Mitarbeiter" Multiplicity="0..1" />
-    <End Role="MitarbeiterDienstplan" Type="Self.MitarbeiterDienstplan" Multiplicity="*" />
+  <Association Name="fk_Mitarbeiter">
+    <End Role="Mitarbeiter" Type="Self.Mitarbeiter" Multiplicity="1" />
+    <End Role="MitarbeiterSchicht" Type="Self.MitarbeiterSchicht" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Mitarbeiter">
         <PropertyRef Name="ID_Mitarbeiter" />
       </Principal>
-      <Dependent Role="MitarbeiterDienstplan">
-        <PropertyRef Name="MitarbeiterID" />
+      <Dependent Role="MitarbeiterSchicht">
+        <PropertyRef Name="ID_Mitarbeiter" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="projekt2ModelStoreContainer">
+  <Association Name="fk_PersPlan">
+    <End Role="Dienstplan" Type="Self.Dienstplan" Multiplicity="0..1" />
+    <End Role="Wochentag" Type="Self.Wochentag" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Dienstplan">
+        <PropertyRef Name="ID_Dienstplan" />
+      </Principal>
+      <Dependent Role="Wochentag">
+        <PropertyRef Name="PersPlan" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_Schicht">
+    <End Role="Schicht" Type="Self.Schicht" Multiplicity="1" />
+    <End Role="MitarbeiterSchicht" Type="Self.MitarbeiterSchicht" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Schicht">
+        <PropertyRef Name="ID_Schicht" />
+      </Principal>
+      <Dependent Role="MitarbeiterSchicht">
+        <PropertyRef Name="ID_Schicht" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_Tag">
+    <End Role="Wochentag" Type="Self.Wochentag" Multiplicity="0..1" />
+    <End Role="Schicht" Type="Self.Schicht" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Wochentag">
+        <PropertyRef Name="ID_Wochentag" />
+      </Principal>
+      <Dependent Role="Schicht">
+        <PropertyRef Name="Tag" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="PersonalplanModelStoreContainer">
     <EntitySet Name="Benutzeraccount" EntityType="Self.Benutzeraccount" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Dienstplan" EntityType="Self.Dienstplan" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Mitarbeiter" EntityType="Self.Mitarbeiter" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="MitarbeiterDienstplan" EntityType="Self.MitarbeiterDienstplan" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MitarbeiterSchicht" EntityType="Self.MitarbeiterSchicht" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Schicht" EntityType="Self.Schicht" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Wochentag" EntityType="Self.Wochentag" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="fk_Angestellter" Association="Self.fk_Angestellter">
       <End Role="Mitarbeiter" EntitySet="Mitarbeiter" />
       <End Role="Benutzeraccount" EntitySet="Benutzeraccount" />
     </AssociationSet>
-    <AssociationSet Name="fk_DienstplanID" Association="Self.fk_DienstplanID">
-      <End Role="Dienstplan" EntitySet="Dienstplan" />
-      <End Role="MitarbeiterDienstplan" EntitySet="MitarbeiterDienstplan" />
-    </AssociationSet>
-    <AssociationSet Name="fk_MitarbeiterID" Association="Self.fk_MitarbeiterID">
+    <AssociationSet Name="fk_Mitarbeiter" Association="Self.fk_Mitarbeiter">
       <End Role="Mitarbeiter" EntitySet="Mitarbeiter" />
-      <End Role="MitarbeiterDienstplan" EntitySet="MitarbeiterDienstplan" />
+      <End Role="MitarbeiterSchicht" EntitySet="MitarbeiterSchicht" />
+    </AssociationSet>
+    <AssociationSet Name="fk_PersPlan" Association="Self.fk_PersPlan">
+      <End Role="Dienstplan" EntitySet="Dienstplan" />
+      <End Role="Wochentag" EntitySet="Wochentag" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Schicht" Association="Self.fk_Schicht">
+      <End Role="Schicht" EntitySet="Schicht" />
+      <End Role="MitarbeiterSchicht" EntitySet="MitarbeiterSchicht" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Tag" Association="Self.fk_Tag">
+      <End Role="Wochentag" EntitySet="Wochentag" />
+      <End Role="Schicht" EntitySet="Schicht" />
     </AssociationSet>
   </EntityContainer>
 </Schema>

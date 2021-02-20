@@ -22,12 +22,12 @@ namespace _2_Projekt_Restaurant_Personalplanung
     /// </summary>
     public partial class NeuerDienstplan : UserControl
     {
-        public ICollectionView CollectionView;
+        
         PersonalplanEntities Context = new PersonalplanEntities();
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            MainGrid.DataContext = Context.Mitarbeiter.ToList().OrderBy(x => x.Vorname);
+            MainGrid.DataContext = Context.Angestellte.ToList().Where(x => x.Stellenbezeichnung == "Koch" && x.IstVerfügbar == true).OrderBy(x => x.Vorname);
         }
 
 
@@ -44,7 +44,7 @@ namespace _2_Projekt_Restaurant_Personalplanung
 
         }
 
-        private void ZurückZumMenue(object sender, RoutedEventArgs e)
+        private void ZurueckZumMenue(object sender, RoutedEventArgs e)
         {
             mainWindow.MenueAnzeigen();
         }

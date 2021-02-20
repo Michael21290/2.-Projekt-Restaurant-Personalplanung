@@ -25,9 +25,11 @@ namespace _2_Projekt_Restaurant_Personalplanung.Datenmodel
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Benutzeraccount> Benutzeraccount { get; set; }
-        public virtual DbSet<Dienstplan> Dienstplan { get; set; }
-        public virtual DbSet<Mitarbeiter> Mitarbeiter { get; set; }
-        public virtual DbSet<MitarbeiterDienstplan> MitarbeiterDienstplan { get; set; }
+        public virtual DbSet<Benutzeraccount> Benutzeraccounts { get; set; }
+        public virtual DbSet<Dienstplan> Dienstplaene { get; set; }
+        public virtual DbSet<Mitarbeiter> Angestellte { get; set; }
+        public virtual DbSet<MitarbeiterSchicht> MitarbeiterSchichten { get; set; }
+        public virtual DbSet<Schicht> Schichten { get; set; }
+        public virtual DbSet<Wochentag> Wochentage { get; set; }
     }
 }

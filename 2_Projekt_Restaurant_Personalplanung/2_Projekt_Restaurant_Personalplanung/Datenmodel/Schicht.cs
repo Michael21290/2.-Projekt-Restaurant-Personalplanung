@@ -12,20 +12,20 @@ namespace _2_Projekt_Restaurant_Personalplanung.Datenmodel
     using System;
     using System.Collections.Generic;
     
-    public partial class Dienstplan
+    public partial class Schicht
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Dienstplan()
+        public Schicht()
         {
-            this.Wochentag = new HashSet<Wochentag>();
+            this.MitarbeiterSchicht = new HashSet<MitarbeiterSchicht>();
         }
     
-        public int ID_Dienstplan { get; set; }
-        public Nullable<int> Kallenderwoche { get; set; }
-        public Nullable<int> Jahr { get; set; }
-        public string Personalgruppe { get; set; }
+        public int ID_Schicht { get; set; }
+        public string Bezeichnung { get; set; }
+        public Nullable<int> Tag { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Wochentag> Wochentag { get; set; }
+        public virtual ICollection<MitarbeiterSchicht> MitarbeiterSchicht { get; set; }
+        public virtual Wochentag Wochentag { get; set; }
     }
 }
