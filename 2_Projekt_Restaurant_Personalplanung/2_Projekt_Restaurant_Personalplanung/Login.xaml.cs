@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using _2_Projekt_Restaurant_Personalplanung.Datenmodel;
 
 namespace _2_Projekt_Restaurant_Personalplanung
 {
@@ -25,6 +26,8 @@ namespace _2_Projekt_Restaurant_Personalplanung
         {
             InitializeComponent();
             mainWindow = _mainWindow;
+            mainWindow.Height = 300;
+            mainWindow.Width = 500;
         }
 
         private void Einloggen(object sender, RoutedEventArgs e)
@@ -33,7 +36,7 @@ namespace _2_Projekt_Restaurant_Personalplanung
             {
                 using (PersonalplanEntities db = new PersonalplanEntities())
                 {
-                    var list = db.Benutzeraccount.Where(x => x.Benutzername == Username.Text && x.Passwort == Password.Password).ToList();
+                    var list = db.Benutzeraccounts.Where(x => x.Benutzername == Username.Text && x.Passwort == Password.Password).ToList();
                     foreach (var b in list)
                     {
                         if (b.IstAdmin == true)

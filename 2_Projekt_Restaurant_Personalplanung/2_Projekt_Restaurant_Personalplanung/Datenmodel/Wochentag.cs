@@ -11,21 +11,24 @@ namespace _2_Projekt_Restaurant_Personalplanung.Datenmodel
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.Linq;
+
     public partial class Wochentag
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Wochentag()
         {
-            this.Schicht = new HashSet<Schicht>();
+            this.EingeteilterMitarbeiter = new HashSet<EingeteilterMitarbeiter>();
+            this.Dienstplan = new HashSet<Dienstplan>();
         }
     
         public int ID_Wochentag { get; set; }
         public string Bezeichnung { get; set; }
-        public Nullable<int> PersPlan { get; set; }
     
-        public virtual Dienstplan Dienstplan { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Schicht> Schicht { get; set; }
+        public virtual ICollection<EingeteilterMitarbeiter> EingeteilterMitarbeiter { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Dienstplan> Dienstplan { get; set; }
+        public IQueryable<Schicht> Schicht { get; internal set; }
     }
 }

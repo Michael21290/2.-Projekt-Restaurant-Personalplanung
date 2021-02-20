@@ -90,10 +90,10 @@
     <Compile Include="Datenmodel\Dienstplan.cs">
       <DependentUpon>PersonalplanModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Datenmodel\Mitarbeiter.cs">
+    <Compile Include="Datenmodel\EingeteilterMitarbeiter.cs">
       <DependentUpon>PersonalplanModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Datenmodel\MitarbeiterSchicht.cs">
+    <Compile Include="Datenmodel\Mitarbeiter.cs">
       <DependentUpon>PersonalplanModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Datenmodel\PersonalplanModel.Context.cs">
@@ -131,10 +131,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MenueAngestellte.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="NeuerDienstplan.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -143,9 +139,6 @@
   <ItemGroup>
     <Compile Include="MenueAdmin.xaml.cs">
       <DependentUpon>MenueAdmin.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="MenueAngestellte.xaml.cs">
-      <DependentUpon>MenueAngestellte.xaml</DependentUpon>
     </Compile>
     <Compile Include="NeuerDienstplan.xaml.cs">
       <DependentUpon>NeuerDienstplan.xaml</DependentUpon>

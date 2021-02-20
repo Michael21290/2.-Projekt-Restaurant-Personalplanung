@@ -21,20 +21,19 @@ namespace _2_Projekt_Restaurant_Personalplanung
     public partial class MenueAdmin : UserControl
     {
         MainWindow mainWindow;
+        
         public MenueAdmin(MainWindow _mainWindow)
         {
             InitializeComponent();
             mainWindow = _mainWindow;
+            mainWindow.Height = 300;
+            mainWindow.Width = 500;
+
         }
 
-        private void PlanKücheAnzeigen(object sender, RoutedEventArgs e)
+        private void PlanAnzeigen(object sender, RoutedEventArgs e)
         {
             mainWindow.DienstplanAnzeigen();
-        }
-
-        private void PlanServiceAnzeigen(object sender, RoutedEventArgs e)
-        {
-
         }
 
         private void DienstplanErstellen(object sender, RoutedEventArgs e)
@@ -42,9 +41,16 @@ namespace _2_Projekt_Restaurant_Personalplanung
             mainWindow.NeuerDienstplanAnzeigen();
         }
 
+        private void Mitarbeiterhinzufuegen(object sender, RoutedEventArgs e)
+        {
+
+        }
+
         private void Ausloggen(object sender, RoutedEventArgs e)
         {
             mainWindow.LoginAnzeigen();
         }
+
+        
     }
 }

@@ -17,15 +17,13 @@ namespace _2_Projekt_Restaurant_Personalplanung.Datenmodel
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Schicht()
         {
-            this.MitarbeiterSchicht = new HashSet<MitarbeiterSchicht>();
+            this.EingeteilterMitarbeiter = new HashSet<EingeteilterMitarbeiter>();
         }
     
         public int ID_Schicht { get; set; }
         public string Bezeichnung { get; set; }
-        public Nullable<int> Tag { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<MitarbeiterSchicht> MitarbeiterSchicht { get; set; }
-        public virtual Wochentag Wochentag { get; set; }
+        public virtual ICollection<EingeteilterMitarbeiter> EingeteilterMitarbeiter { get; set; }
     }
 }

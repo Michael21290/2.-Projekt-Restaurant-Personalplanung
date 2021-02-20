@@ -9,9 +9,9 @@
     <StackPanel>
         <Label Content="Menü" HorizontalAlignment="Center" FontSize="30"/>
 
-        <Button Content="Dienstplant für Küchenpersonal anzeigen" Margin="5,20,5,5" Width="300" Click="PlanKücheAnzeigen" FontSize="15"/>
-        <Button Content="Dienstplant für Servicepersonal anzeigen" Margin="5" Width="300" Click="PlanServiceAnzeigen" FontSize="15"/>
+        <Button Content="Dienstplant anzeigen" Margin="5,20,5,5" Width="300" Click="PlanAnzeigen" FontSize="15"/>
         <Button Content="Neuen Dienstplan erstellen" Margin="5" Width="300" Click="DienstplanErstellen" FontSize="15"/>
+        <Button Content="Mitarbeiter hinzufügen" Margin="5" Width="300" Click="Mitarbeiterhinzufuegen" FontSize="15"/>
         <Button Content="Ausloggen" Margin="5,20,5,5" Width="300" Click="Ausloggen" FontSize="15"/>
     </StackPanel>
 </UserControl>

@@ -23,34 +23,34 @@ namespace _2_Projekt_Restaurant_Personalplanung
     /// </summary>
     public partial class Dienstplan : UserControl
     {
-        PersonalplanEntities Context = new PersonalplanEntities();
+        private PersonalplanEntities Context = new PersonalplanEntities();
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             InitializeComponent();
-            JahrKW.DataContext = Context.Dienstplaene.ToList().LastOrDefault();
-            mo1.DataContext = Context.Dienstplaene.ToList().LastOrDefault().Wochentag.ToList().Where(x => x.Bezeichnung == "Montag").FirstOrDefault().Schicht.ToList().Where(y => y.Bezeichnung == "Frühschicht").FirstOrDefault().MitarbeiterSchicht.ToList();
-            mo2.DataContext = Context.Dienstplaene.ToList().LastOrDefault().Wochentag.ToList().Where(x => x.Bezeichnung == "Montag").FirstOrDefault().Schicht.ToList().Where(y => y.Bezeichnung == "Mittagsschicht").FirstOrDefault().MitarbeiterSchicht.ToList();
-            mo3.DataContext = Context.Dienstplaene.ToList().LastOrDefault().Wochentag.ToList().Where(x => x.Bezeichnung == "Montag").FirstOrDefault().Schicht.ToList().Where(y => y.Bezeichnung == "Spätschicht").FirstOrDefault().MitarbeiterSchicht.ToList();
-            di1.DataContext = Context.Dienstplaene.ToList().LastOrDefault().Wochentag.ToList().Where(x => x.Bezeichnung == "Dienstag").FirstOrDefault().Schicht.ToList().Where(y => y.Bezeichnung == "Frühschicht").FirstOrDefault().MitarbeiterSchicht.ToList();
-            di2.DataContext = Context.Dienstplaene.ToList().LastOrDefault().Wochentag.ToList().Where(x => x.Bezeichnung == "Dienstag").FirstOrDefault().Schicht.ToList().Where(y => y.Bezeichnung == "Mittagsschicht").FirstOrDefault().MitarbeiterSchicht.ToList();
-            di3.DataContext = Context.Dienstplaene.ToList().LastOrDefault().Wochentag.ToList().Where(x => x.Bezeichnung == "Dienstag").FirstOrDefault().Schicht.ToList().Where(y => y.Bezeichnung == "Spätschicht").FirstOrDefault().MitarbeiterSchicht.ToList();
-            mi1.DataContext = Context.Dienstplaene.ToList().LastOrDefault().Wochentag.ToList().Where(x => x.Bezeichnung == "Mittwoch").FirstOrDefault().Schicht.ToList().Where(y => y.Bezeichnung == "Frühschicht").FirstOrDefault().MitarbeiterSchicht.ToList();
-            mi2.DataContext = Context.Dienstplaene.ToList().LastOrDefault().Wochentag.ToList().Where(x => x.Bezeichnung == "Mittwoch").FirstOrDefault().Schicht.ToList().Where(y => y.Bezeichnung == "Mittagsschicht").FirstOrDefault().MitarbeiterSchicht.ToList();
-            mi3.DataContext = Context.Dienstplaene.ToList().LastOrDefault().Wochentag.ToList().Where(x => x.Bezeichnung == "Mittwoch").FirstOrDefault().Schicht.ToList().Where(y => y.Bezeichnung == "Spätschicht").FirstOrDefault().MitarbeiterSchicht.ToList();
-            do1.DataContext = Context.Dienstplaene.ToList().LastOrDefault().Wochentag.ToList().Where(x => x.Bezeichnung == "Donnerstag").FirstOrDefault().Schicht.ToList().Where(y => y.Bezeichnung == "Frühschicht").FirstOrDefault().MitarbeiterSchicht.ToList();
-            do2.DataContext = Context.Dienstplaene.ToList().LastOrDefault().Wochentag.ToList().Where(x => x.Bezeichnung == "Donnerstag").FirstOrDefault().Schicht.ToList().Where(y => y.Bezeichnung == "Mittagsschicht").FirstOrDefault().MitarbeiterSchicht.ToList();
-            do3.DataContext = Context.Dienstplaene.ToList().LastOrDefault().Wochentag.ToList().Where(x => x.Bezeichnung == "Donnerstag").FirstOrDefault().Schicht.ToList().Where(y => y.Bezeichnung == "Spätschicht").FirstOrDefault().MitarbeiterSchicht.ToList();
-            fr1.DataContext = Context.Dienstplaene.ToList().LastOrDefault().Wochentag.ToList().Where(x => x.Bezeichnung == "Freitag").FirstOrDefault().Schicht.ToList().Where(y => y.Bezeichnung == "Frühschicht").FirstOrDefault().MitarbeiterSchicht.ToList();
-            fr2.DataContext = Context.Dienstplaene.ToList().LastOrDefault().Wochentag.ToList().Where(x => x.Bezeichnung == "Freitag").FirstOrDefault().Schicht.ToList().Where(y => y.Bezeichnung == "Mittagsschicht").FirstOrDefault().MitarbeiterSchicht.ToList();
-            fr3.DataContext = Context.Dienstplaene.ToList().LastOrDefault().Wochentag.ToList().Where(x => x.Bezeichnung == "Freitag").FirstOrDefault().Schicht.ToList().Where(y => y.Bezeichnung == "Spätschicht").FirstOrDefault().MitarbeiterSchicht.ToList();
-            sa1.DataContext = Context.Dienstplaene.ToList().LastOrDefault().Wochentag.ToList().Where(x => x.Bezeichnung == "Samstag").FirstOrDefault().Schicht.ToList().Where(y => y.Bezeichnung == "Frühschicht").FirstOrDefault().MitarbeiterSchicht.ToList();
-            sa2.DataContext = Context.Dienstplaene.ToList().LastOrDefault().Wochentag.ToList().Where(x => x.Bezeichnung == "Samstag").FirstOrDefault().Schicht.ToList().Where(y => y.Bezeichnung == "Mittagsschicht").FirstOrDefault().MitarbeiterSchicht.ToList();
-            sa3.DataContext = Context.Dienstplaene.ToList().LastOrDefault().Wochentag.ToList().Where(x => x.Bezeichnung == "Samstag").FirstOrDefault().Schicht.ToList().Where(y => y.Bezeichnung == "Spätschicht").FirstOrDefault().MitarbeiterSchicht.ToList();
-            so1.DataContext = Context.Dienstplaene.ToList().LastOrDefault().Wochentag.ToList().Where(x => x.Bezeichnung == "Sonntag").FirstOrDefault().Schicht.ToList().Where(y => y.Bezeichnung == "Frühschicht").FirstOrDefault().MitarbeiterSchicht.ToList();
-            so2.DataContext = Context.Dienstplaene.ToList().LastOrDefault().Wochentag.ToList().Where(x => x.Bezeichnung == "Sonntag").FirstOrDefault().Schicht.ToList().Where(y => y.Bezeichnung == "Mittagsschicht").FirstOrDefault().MitarbeiterSchicht.ToList();
-            so3.DataContext = Context.Dienstplaene.ToList().LastOrDefault().Wochentag.ToList().Where(x => x.Bezeichnung == "Sonntag").FirstOrDefault().Schicht.ToList().Where(y => y.Bezeichnung == "Spätschicht").FirstOrDefault().MitarbeiterSchicht.ToList();
 
+            JahrKW.DataContext = Context.Dienstplaene.ToList().LastOrDefault();
+            mo1.DataContext = Context.Dienstplaene.ToList().LastOrDefault().Wochentag.ToList().Where(x => x.Bezeichnung == "Montag").FirstOrDefault().EingeteilterMitarbeiter.ToList().Where(x => x.Schicht.Bezeichnung == "Frühschicht");
+            mo2.DataContext = Context.Dienstplaene.ToList().LastOrDefault().Wochentag.ToList().Where(x => x.Bezeichnung == "Montag").FirstOrDefault().EingeteilterMitarbeiter.ToList().Where(x => x.Schicht.Bezeichnung == "Mittagsschicht");
+            mo3.DataContext = Context.Dienstplaene.ToList().LastOrDefault().Wochentag.ToList().Where(x => x.Bezeichnung == "Montag").FirstOrDefault().EingeteilterMitarbeiter.ToList().Where(x => x.Schicht.Bezeichnung == "Spätschicht");
+            di1.DataContext = Context.Dienstplaene.ToList().LastOrDefault().Wochentag.ToList().Where(x => x.Bezeichnung == "Dienstag").FirstOrDefault().EingeteilterMitarbeiter.ToList().Where(x => x.Schicht.Bezeichnung == "Frühschicht");
+            di2.DataContext = Context.Dienstplaene.ToList().LastOrDefault().Wochentag.ToList().Where(x => x.Bezeichnung == "Dienstag").FirstOrDefault().EingeteilterMitarbeiter.ToList().Where(x => x.Schicht.Bezeichnung == "Mittagsschicht");
+            di3.DataContext = Context.Dienstplaene.ToList().LastOrDefault().Wochentag.ToList().Where(x => x.Bezeichnung == "Dienstag").FirstOrDefault().EingeteilterMitarbeiter.ToList().Where(x => x.Schicht.Bezeichnung == "Spätschicht");
+            mi1.DataContext = Context.Dienstplaene.ToList().LastOrDefault().Wochentag.ToList().Where(x => x.Bezeichnung == "Mittwoch").FirstOrDefault().EingeteilterMitarbeiter.ToList().Where(x => x.Schicht.Bezeichnung == "Frühschicht");
+            mi2.DataContext = Context.Dienstplaene.ToList().LastOrDefault().Wochentag.ToList().Where(x => x.Bezeichnung == "Mittwoch").FirstOrDefault().EingeteilterMitarbeiter.ToList().Where(x => x.Schicht.Bezeichnung == "Mittagsschicht");
+            mi3.DataContext = Context.Dienstplaene.ToList().LastOrDefault().Wochentag.ToList().Where(x => x.Bezeichnung == "Mittwoch").FirstOrDefault().EingeteilterMitarbeiter.ToList().Where(x => x.Schicht.Bezeichnung == "Spätschicht");
+            do1.DataContext = Context.Dienstplaene.ToList().LastOrDefault().Wochentag.ToList().Where(x => x.Bezeichnung == "Donnerstag").FirstOrDefault().EingeteilterMitarbeiter.ToList().Where(x => x.Schicht.Bezeichnung == "Frühschicht");
+            do2.DataContext = Context.Dienstplaene.ToList().LastOrDefault().Wochentag.ToList().Where(x => x.Bezeichnung == "Donnerstag").FirstOrDefault().EingeteilterMitarbeiter.ToList().Where(x => x.Schicht.Bezeichnung == "Mittagsschicht");
+            do3.DataContext = Context.Dienstplaene.ToList().LastOrDefault().Wochentag.ToList().Where(x => x.Bezeichnung == "Donnerstag").FirstOrDefault().EingeteilterMitarbeiter.ToList().Where(x => x.Schicht.Bezeichnung == "Spätschicht");
+            fr1.DataContext = Context.Dienstplaene.ToList().LastOrDefault().Wochentag.ToList().Where(x => x.Bezeichnung == "Freitag").FirstOrDefault().EingeteilterMitarbeiter.ToList().Where(x => x.Schicht.Bezeichnung == "Frühschicht");
+            fr2.DataContext = Context.Dienstplaene.ToList().LastOrDefault().Wochentag.ToList().Where(x => x.Bezeichnung == "Freitag").FirstOrDefault().EingeteilterMitarbeiter.ToList().Where(x => x.Schicht.Bezeichnung == "Mittagsschicht");
+            fr3.DataContext = Context.Dienstplaene.ToList().LastOrDefault().Wochentag.ToList().Where(x => x.Bezeichnung == "Freitag").FirstOrDefault().EingeteilterMitarbeiter.ToList().Where(x => x.Schicht.Bezeichnung == "Spätschicht");
+            sa1.DataContext = Context.Dienstplaene.ToList().LastOrDefault().Wochentag.ToList().Where(x => x.Bezeichnung == "Samstag").FirstOrDefault().EingeteilterMitarbeiter.ToList().Where(x => x.Schicht.Bezeichnung == "Frühschicht");
+            sa2.DataContext = Context.Dienstplaene.ToList().LastOrDefault().Wochentag.ToList().Where(x => x.Bezeichnung == "Samstag").FirstOrDefault().EingeteilterMitarbeiter.ToList().Where(x => x.Schicht.Bezeichnung == "Mittagsschicht");
+            sa3.DataContext = Context.Dienstplaene.ToList().LastOrDefault().Wochentag.ToList().Where(x => x.Bezeichnung == "Samstag").FirstOrDefault().EingeteilterMitarbeiter.ToList().Where(x => x.Schicht.Bezeichnung == "Spätschicht");
+            so1.DataContext = Context.Dienstplaene.ToList().LastOrDefault().Wochentag.ToList().Where(x => x.Bezeichnung == "Sonntag").FirstOrDefault().EingeteilterMitarbeiter.ToList().Where(x => x.Schicht.Bezeichnung == "Frühschicht");
+            so2.DataContext = Context.Dienstplaene.ToList().LastOrDefault().Wochentag.ToList().Where(x => x.Bezeichnung == "Sonntag").FirstOrDefault().EingeteilterMitarbeiter.ToList().Where(x => x.Schicht.Bezeichnung == "Mittagsschicht");
+            so3.DataContext = Context.Dienstplaene.ToList().LastOrDefault().Wochentag.ToList().Where(x => x.Bezeichnung == "Sonntag").FirstOrDefault().EingeteilterMitarbeiter.ToList().Where(x => x.Schicht.Bezeichnung == "Spätschicht");
         }
 
         MainWindow mainWindow;
@@ -59,6 +59,8 @@ namespace _2_Projekt_Restaurant_Personalplanung
             
             InitializeComponent();
             mainWindow = _mainWindow;
+            mainWindow.Height = 675;
+            mainWindow.Width = 1200;
         }
 
         private void Speichern(object sender, RoutedEventArgs e)
