@@ -28,8 +28,12 @@ IF OBJECT_ID('Schicht') IS NOT NULL
   DROP TABLE Schicht;
 GO
 
-IF OBJECT_ID('MitarbeiterSchicht') IS NOT NULL
-  DROP TABLE MitarbeiterSchicht;
+IF OBJECT_ID('EingeteilterMitarbeiter') IS NOT NULL
+  DROP TABLE EingeteilterMitarbeiter;
+GO
+
+IF OBJECT_ID('DienstplanTag') IS NOT NULL
+  DROP TABLE DienstplanTag;
 GO
 
 CREATE TABLE Mitarbeiter (
@@ -39,8 +43,7 @@ CREATE TABLE Mitarbeiter (
   Geburtsdatum datetime,
   Einstellungsdatum datetime,
   Stellenbezeichnung nvarchar(500),
-  Email nvarchar(500),
-  IstVerfügbar bit,
+  Email nvarchar(500)
 );
 
 CREATE TABLE Benutzeraccount (
@@ -57,46 +60,50 @@ CREATE TABLE Benutzeraccount (
 CREATE TABLE Dienstplan (
   ID_Dienstplan int NOT NULL IDENTITY PRIMARY KEY, 
   Kallenderwoche int,
-  Jahr int,
-  Personalgruppe nvarchar(50)
+  Jahr int
 );
 
 CREATE TABLE Wochentag (
   ID_Wochentag int NOT NULL IDENTITY PRIMARY KEY, 
   Bezeichnung nvarchar(50),
-  PersPlan int
-  CONSTRAINT fk_PersPlan
-    FOREIGN KEY (PersPlan)
-    REFERENCES Dienstplan(ID_Dienstplan)
 );
 
 CREATE TABLE Schicht (
   ID_Schicht int NOT NULL IDENTITY PRIMARY KEY, 
   Bezeichnung nvarchar(50),
-  Tag int
-  CONSTRAINT fk_Tag
-    FOREIGN KEY (Tag)
-    REFERENCES Wochentag(ID_Wochentag)
 );
 
-CREATE TABLE MitarbeiterSchicht ( 
-  Mitarbeitername nvarchar(50),
-  ID_Mitarbeiter int,
+CREATE TABLE EingeteilterMitarbeiter ( 
+  name nvarchar(500),
+  ID_Wochentag int,
   ID_Schicht int,
-  CONSTRAINT pk_MitarbeiterID PRIMARY KEY (ID_Mitarbeiter, ID_Schicht),
-  CONSTRAINT fk_Mitarbeiter
-    FOREIGN KEY (ID_Mitarbeiter)
-    REFERENCES Mitarbeiter(ID_Mitarbeiter),
-  CONSTRAINT fk_Schicht
+  CONSTRAINT pk_WochentagID PRIMARY KEY (ID_Wochentag, ID_Schicht),
+  CONSTRAINT fk_Wochentag
+    FOREIGN KEY (ID_Wochentag)
+    REFERENCES Wochentag(ID_Wochentag),
+  CONSTRAINT fk_TSchicht
     FOREIGN KEY (ID_Schicht)
     REFERENCES Schicht(ID_Schicht)
 );
 
-INSERT INTO Mitarbeiter(Name, Vorname, Geburtsdatum, Einstellungsdatum, Stellenbezeichnung, Email, IstVerfügbar) VALUES
-  ('Stark','Tony','19900117 10:23:45:123',GETDATE(),'Koch','stark@tony.de', 1),
-  ('Rogers','Steve','19900117 10:23:45:123',GETDATE(),'Servicekraft','rogers@steve.de', 1),
-  ('Parker','Peter','19900117 10:23:45:123',GETDATE(),'Servicekraft','parker@peter.de', 1),
-  ('Odinson','Thor','19900117 10:23:45:123',GETDATE(),'Koch','odinson@thor.de', 1)
+CREATE TABLE DienstplanTag ( 
+  ID_Dienstplan int,
+  ID_Wochentag int,
+  CONSTRAINT pk_DienstplanID PRIMARY KEY (ID_Dienstplan, ID_Wochentag),
+  CONSTRAINT fk_Dienstplan
+    FOREIGN KEY (ID_Dienstplan)
+    REFERENCES Dienstplan(ID_Dienstplan),
+  CONSTRAINT fk_WoTag
+    FOREIGN KEY (ID_Wochentag)
+    REFERENCES Wochentag(ID_Wochentag)
+);
+
+
+INSERT INTO Mitarbeiter(Name, Vorname, Geburtsdatum, Einstellungsdatum, Stellenbezeichnung, Email) VALUES
+  ('Stark','Tony','19900117 10:23:45:123',GETDATE(),'Koch','stark@tony.de'),
+  ('Rogers','Steve','19900117 10:23:45:123',GETDATE(),'Servicekraft','rogers@steve.de'),
+  ('Parker','Peter','19900117 10:23:45:123',GETDATE(),'Servicekraft','parker@peter.de'),
+  ('Odinson','Thor','19900117 10:23:45:123',GETDATE(),'Koch','odinson@thor.de')
 ;
 
 INSERT INTO Benutzeraccount (Benutzername, Passwort, IstAdmin, Angestellter) VALUES
@@ -106,71 +113,56 @@ INSERT INTO Benutzeraccount (Benutzername, Passwort, IstAdmin, Angestellter) VAL
   ('thorodinson', 'thor', 0, 4)
 ;
 
-INSERT INTO Dienstplan(Kallenderwoche, Jahr,Personalgruppe) VALUES
-  (1, 2021,'Küchenpersonal')
+INSERT INTO Dienstplan(Kallenderwoche, Jahr) VALUES
+  (1, 2021)
 ;
 
-INSERT INTO Wochentag(Bezeichnung, PersPlan) VALUES
-  ('Montag', 1),
-  ('Dienstag', 1),
-  ('Mittwoch', 1),
-  ('Donnerstag', 1),
-  ('Freitag', 1),
-  ('Samstag', 1),
-  ('Sonntag', 1)
+INSERT INTO Wochentag(Bezeichnung) VALUES
+  ('Montag'),
+  ('Dienstag'),
+  ('Mittwoch'),
+  ('Donnerstag'),
+  ('Freitag'),
+  ('Samstag'),
+  ('Sonntag')
 ;
 
-INSERT INTO Schicht(Bezeichnung, Tag) VALUES
-  ('Frühschicht', 1),
-  ('Mittagsschicht', 1),
-  ('Spätschicht', 1),
-  ('Frühschicht', 2),
-  ('Mittagsschicht', 2),
-  ('Spätschicht', 2),
-  ('Frühschicht', 3),
-  ('Mittagsschicht', 3),
-  ('Spätschicht', 3),
-  ('Frühschicht', 4),
-  ('Mittagsschicht', 4),
-  ('Spätschicht', 4),
-  ('Frühschicht', 5),
-  ('Mittagsschicht', 5),
-  ('Spätschicht', 5),
-  ('Frühschicht', 6),
-  ('Mittagsschicht', 6),
-  ('Spätschicht', 6),
-  ('Frühschicht', 7),
-  ('Mittagsschicht', 7),
-  ('Spätschicht', 7)
+INSERT INTO Schicht(Bezeichnung) VALUES
+  ('Frühschicht'),
+  ('Mittagsschicht'),
+  ('Spätschicht')
 ;
 
-INSERT INTO MitarbeiterSchicht (Mitarbeitername, ID_Mitarbeiter, ID_Schicht) VALUES
-  ('Thor Odinson', 4,1),
-  ('Thor Odinson', 4,2),
-  ('Tony Stark', 1,2),
-  ('Tony Stark', 1,3),
-  ('Thor Odinson', 4,4),
-  ('Thor Odinson', 4,5),
-  ('Tony Stark', 1,5),
-  ('Tony Stark', 1,6),
-  ('Thor Odinson', 4,7),
-  ('Thor Odinson', 4,8),
-  ('Tony Stark', 1,8),
-  ('Tony Stark', 1,9),
-  ('Thor Odinson', 4,10),
-  ('Thor Odinson', 4,11),
-  ('Tony Stark', 1,11),
-  ('Tony Stark', 1,12),
-  ('Thor Odinson', 4,13),
-  ('Thor Odinson', 4,14),
-  ('Tony Stark', 1,14),
-  ('Tony Stark', 1,15),
-  ('Thor Odinson', 4,16),
-  ('Thor Odinson', 4,17),
-  ('Tony Stark', 1,17),
-  ('Tony Stark', 1,18),
-  ('Thor Odinson', 4,19),
-  ('Thor Odinson', 4,20),
-  ('Tony Stark', 1,20),
-  ('Tony Stark', 1,21)
+INSERT INTO EingeteilterMitarbeiter(name, ID_Wochentag, ID_Schicht) VALUES
+  ('Thor Odinson, Steve Rogers', 1,1),
+  ('Thor Odinson, Tony Stark, Steve Rogers, Peter Parker', 1,2),
+  ('Tony Stark, Peter Parker', 1,3),
+  ('Thor Odinson, Steve Rogers', 2,1),
+  ('Thor Odinson, Tony Stark, Steve Rogers, Peter Parker', 2,2),
+  ('Tony Stark, Peter Parker', 2,3),
+  ('Thor Odinson, Steve Rogers', 3,1),
+  ('Thor Odinson, Tony Stark, Steve Rogers, Peter Parker', 3,2),
+  ('Tony Stark, Peter Parker', 3,3),
+  ('Thor Odinson, Steve Rogers', 4,1),
+  ('Thor Odinson, Tony Stark, Steve Rogers, Peter Parker', 4,2),
+  ('Tony Stark, Peter Parker', 4,3),
+  ('Thor Odinson, Steve Rogers', 5,1),
+  ('Thor Odinson, Tony Stark, Steve Rogers, Peter Parker', 5,2),
+  ('Tony Stark, Peter Parker', 5,3),
+  ('Thor Odinson, Steve Rogers', 6,1),
+  ('Thor Odinson, Tony Stark, Steve Rogers, Peter Parker', 6,2),
+  ('Tony Stark, Peter Parker', 6,3),
+  ('Thor Odinson, Steve Rogers', 7,1),
+  ('Thor Odinson, Tony Stark, Steve Rogers, Peter Parker', 7,2),
+  ('Tony Stark, Peter Parker', 7,3)
+;
+
+INSERT INTO DienstplanTag( ID_Dienstplan, ID_Wochentag) VALUES
+  (1,1),
+  (1,2),
+  (1,3),
+  (1,4),
+  (1,5),
+  (1,6),
+  (1,7)
 ;

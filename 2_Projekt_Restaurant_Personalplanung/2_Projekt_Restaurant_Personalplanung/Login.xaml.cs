@@ -48,7 +48,7 @@ namespace _2_Projekt_Restaurant_Personalplanung
                         else if (b.IstAdmin == false)
                         {
 
-                            mainWindow.DienstplanAnzeigen();
+                            mainWindow.DienstplanMitarbeiterAnzeigen();
                             return;
                         }
                     }
