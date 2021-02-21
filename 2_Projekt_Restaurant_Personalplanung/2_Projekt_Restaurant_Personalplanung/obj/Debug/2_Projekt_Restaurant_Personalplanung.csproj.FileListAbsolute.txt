@@ -79,3 +79,5 @@ C:\Users\gerbm\Desktop\Neuer Ordner (3)\2.-Projekt-Restaurant-Personalplanung\2_
 C:\Users\gerbm\Desktop\Neuer Ordner (3)\2.-Projekt-Restaurant-Personalplanung\2_Projekt_Restaurant_Personalplanung\2_Projekt_Restaurant_Personalplanung\obj\Debug\NeuerMitarbeiter.baml
 C:\Users\gerbm\Desktop\Neuer Ordner (3)\2.-Projekt-Restaurant-Personalplanung\2_Projekt_Restaurant_Personalplanung\2_Projekt_Restaurant_Personalplanung\obj\Debug\DienstplanMitarbeiter.g.cs
 C:\Users\gerbm\Desktop\Neuer Ordner (3)\2.-Projekt-Restaurant-Personalplanung\2_Projekt_Restaurant_Personalplanung\2_Projekt_Restaurant_Personalplanung\obj\Debug\DienstplanMitarbeiter.baml
+C:\Users\gerbm\Desktop\Neuer Ordner (3)\2.-Projekt-Restaurant-Personalplanung\2_Projekt_Restaurant_Personalplanung\2_Projekt_Restaurant_Personalplanung\obj\Debug\MitarbeiterBearbeiten.g.cs
+C:\Users\gerbm\Desktop\Neuer Ordner (3)\2.-Projekt-Restaurant-Personalplanung\2_Projekt_Restaurant_Personalplanung\2_Projekt_Restaurant_Personalplanung\obj\Debug\MitarbeiterBearbeiten.baml

@@ -51,6 +51,9 @@ namespace _2_Projekt_Restaurant_Personalplanung
             mainWindow.LoginAnzeigen();
         }
 
-        
+        private void Mitarbeiterbearbeiten(object sender, RoutedEventArgs e)
+        {
+            mainWindow.MitarbeiterBearbeitenAnzeigen();
+        }
     }
 }

@@ -40,7 +40,6 @@
           <ScalarProperty Name="Einstellungsdatum" ColumnName="Einstellungsdatum" />
           <ScalarProperty Name="Stellenbezeichnung" ColumnName="Stellenbezeichnung" />
           <ScalarProperty Name="Email" ColumnName="Email" />
-          <ScalarProperty Name="IstVerfügbar" ColumnName="IstVerfügbar" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

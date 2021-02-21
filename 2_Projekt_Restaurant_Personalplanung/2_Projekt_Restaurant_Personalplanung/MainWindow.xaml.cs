@@ -29,6 +29,7 @@ namespace _2_Projekt_Restaurant_Personalplanung
         MenueAdmin Menue;
         NeuerMitarbeiter NeuerMitarbeiter;
         DienstplanMitarbeiter DienstplanMitarbeiter;
+        MitarbeiterBearbeiten MitarbeiterBearbeiten;
         
         
         
@@ -74,6 +75,10 @@ namespace _2_Projekt_Restaurant_Personalplanung
             UserControl.Content = DienstplanMitarbeiter;
         }
 
-        
+        public void MitarbeiterBearbeitenAnzeigen()
+        {
+            MitarbeiterBearbeiten = new MitarbeiterBearbeiten(this);
+            UserControl.Content = MitarbeiterBearbeiten;
+        }
     }
 }

@@ -51,7 +51,6 @@
           <Property Name="Einstellungsdatum" Type="datetime" />
           <Property Name="Stellenbezeichnung" Type="nvarchar" MaxLength="500" />
           <Property Name="Email" Type="nvarchar" MaxLength="500" />
-          <Property Name="IstVerfügbar" Type="bit" />
         </EntityType>
         <EntityType Name="Schicht">
           <Key>
@@ -203,7 +202,6 @@
           <Property Name="Einstellungsdatum" Type="DateTime" Precision="3" />
           <Property Name="Stellenbezeichnung" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
           <Property Name="Email" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
-          <Property Name="IstVerfügbar" Type="Boolean" />
           <NavigationProperty Name="Benutzeraccount" Relationship="Self.fk_Angestellter" FromRole="Mitarbeiter" ToRole="Benutzeraccount" />
         </EntityType>
         <EntityType Name="Schicht">
@@ -332,7 +330,6 @@
                 <ScalarProperty Name="Einstellungsdatum" ColumnName="Einstellungsdatum" />
                 <ScalarProperty Name="Stellenbezeichnung" ColumnName="Stellenbezeichnung" />
                 <ScalarProperty Name="Email" ColumnName="Email" />
-                <ScalarProperty Name="IstVerfügbar" ColumnName="IstVerfügbar" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

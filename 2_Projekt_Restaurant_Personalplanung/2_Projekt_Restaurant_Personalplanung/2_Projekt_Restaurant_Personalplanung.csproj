@@ -138,6 +138,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="MitarbeiterBearbeiten.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="NeuerDienstplan.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -150,6 +154,9 @@
   <ItemGroup>
     <Compile Include="MenueAdmin.xaml.cs">
       <DependentUpon>MenueAdmin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MitarbeiterBearbeiten.xaml.cs">
+      <DependentUpon>MitarbeiterBearbeiten.xaml</DependentUpon>
     </Compile>
     <Compile Include="NeuerDienstplan.xaml.cs">
       <DependentUpon>NeuerDienstplan.xaml</DependentUpon>

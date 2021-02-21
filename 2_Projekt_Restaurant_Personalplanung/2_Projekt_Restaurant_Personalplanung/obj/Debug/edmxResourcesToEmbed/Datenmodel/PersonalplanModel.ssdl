@@ -46,7 +46,6 @@
     <Property Name="Einstellungsdatum" Type="datetime" />
     <Property Name="Stellenbezeichnung" Type="nvarchar" MaxLength="500" />
     <Property Name="Email" Type="nvarchar" MaxLength="500" />
-    <Property Name="IstVerfügbar" Type="bit" />
   </EntityType>
   <EntityType Name="Schicht">
     <Key>

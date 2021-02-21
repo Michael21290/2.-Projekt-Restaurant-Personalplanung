@@ -24,6 +24,7 @@ namespace _2_Projekt_Restaurant_Personalplanung
         MainWindow mainWindow;
 
         PersonalplanEntities Context = new PersonalplanEntities();
+        
 
         public NeuerMitarbeiter(MainWindow _mainWindow)
         {

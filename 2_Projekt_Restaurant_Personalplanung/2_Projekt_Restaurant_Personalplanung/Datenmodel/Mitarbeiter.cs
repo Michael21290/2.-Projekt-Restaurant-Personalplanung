@@ -27,7 +27,6 @@ namespace _2_Projekt_Restaurant_Personalplanung.Datenmodel
         public Nullable<System.DateTime> Einstellungsdatum { get; set; }
         public string Stellenbezeichnung { get; set; }
         public string Email { get; set; }
-        public Nullable<bool> IstVerfügbar { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Benutzeraccount> Benutzeraccount { get; set; }

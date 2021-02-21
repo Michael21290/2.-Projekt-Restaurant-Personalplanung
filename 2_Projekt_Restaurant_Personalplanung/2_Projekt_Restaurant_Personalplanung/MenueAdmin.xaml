@@ -12,6 +12,7 @@
         <Button Content="Dienstplant anzeigen" Margin="5,20,5,5" Width="300" Click="PlanAnzeigen" FontSize="15"/>
         <Button Content="Neuen Dienstplan erstellen" Margin="5" Width="300" Click="DienstplanErstellen" FontSize="15"/>
         <Button Content="Mitarbeiter hinzufügen" Margin="5" Width="300" Click="Mitarbeiterhinzufuegen" FontSize="15"/>
+        <Button Content="Mitarbeiter bearbeiten" Margin="5" Width="300" Click="Mitarbeiterbearbeiten" FontSize="15"/>
         <Button Content="Ausloggen" Margin="5,20,5,5" Width="300" Click="Ausloggen" FontSize="15"/>
     </StackPanel>
 </UserControl>
