@@ -43,7 +43,7 @@ namespace _2_Projekt_Restaurant_Personalplanung
 
         private void Mitarbeiterhinzufuegen(object sender, RoutedEventArgs e)
         {
-
+            mainWindow.NeuerMitarbeiterAnzeigen();
         }
 
         private void Ausloggen(object sender, RoutedEventArgs e)

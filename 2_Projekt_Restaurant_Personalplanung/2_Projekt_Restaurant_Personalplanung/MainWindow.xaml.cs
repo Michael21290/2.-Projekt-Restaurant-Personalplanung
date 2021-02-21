@@ -27,7 +27,7 @@ namespace _2_Projekt_Restaurant_Personalplanung
         Dienstplan dienstplan;
         NeuerDienstplan NeuerDienstplan;
         MenueAdmin Menue;
-
+        NeuerMitarbeiter NeuerMitarbeiter;
         
         
         
@@ -59,6 +59,12 @@ namespace _2_Projekt_Restaurant_Personalplanung
         {
             login = new Login(this);
             UserControl.Content = login;
+        }
+
+        public void NeuerMitarbeiterAnzeigen()
+        {
+            NeuerMitarbeiter = new NeuerMitarbeiter(this);
+            UserControl.Content = NeuerMitarbeiter;
         }
     }
 }
