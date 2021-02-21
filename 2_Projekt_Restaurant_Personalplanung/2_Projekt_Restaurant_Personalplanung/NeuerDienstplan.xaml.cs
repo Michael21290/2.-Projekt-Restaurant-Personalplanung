@@ -24,11 +24,7 @@ namespace _2_Projekt_Restaurant_Personalplanung
     public partial class NeuerDienstplan : UserControl
     {
         PersonalplanEntities Context = new PersonalplanEntities();
-
-        private void Window_Loaded(object sender, RoutedEventArgs e)
-        {
-            
-        }
+        ICollectionView CollectionView;
 
         MainWindow mainWindow;
         public NeuerDienstplan(MainWindow _mainWindow)
@@ -38,6 +34,10 @@ namespace _2_Projekt_Restaurant_Personalplanung
             mainWindow = _mainWindow;
             mainWindow.Height = 675;
             mainWindow.Width = 1200;
+
+            Context.Angestellte.Load();
+            CollectionView = CollectionViewSource.GetDefaultView(Context.Angestellte.Local);
+            DGAngestellte.DataContext = CollectionView;
         }
 
         private void Speichern(object sender, RoutedEventArgs e)
@@ -84,6 +84,11 @@ namespace _2_Projekt_Restaurant_Personalplanung
         private void ZurueckZumMenue(object sender, RoutedEventArgs e)
         {
             mainWindow.MenueAnzeigen();
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

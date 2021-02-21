@@ -1,0 +1,64 @@
+﻿<UserControl x:Class="_2_Projekt_Restaurant_Personalplanung.NeuerMitarbeiter"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:_2_Projekt_Restaurant_Personalplanung"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800" Background="Beige" Loaded="Window_Loaded">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto"></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Label Content="Mitarbeiter hinzufügen" Grid.ColumnSpan="2" HorizontalAlignment="Center" FontWeight="Bold" FontSize="20"/>
+
+        <Label Content="Name:" Grid.Row="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold"/>
+        <TextBox Name="tbName" Grid.Row="1" Grid.Column="2" VerticalContentAlignment="Center" Margin="5"/>
+
+        <Label Content="Vorname:" Grid.Row="2" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold"/>
+        <TextBox Name="tbVorname" Grid.Row="2" Grid.Column="2" VerticalContentAlignment="Center" Margin="5"/>
+
+        <Label Content="Geburtsdatum:" Grid.Row="3" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold"/>
+        <DatePicker Name="dpGeburtsdatum" Grid.Row="3" Grid.Column="2" VerticalContentAlignment="Center" Margin="5"/>
+
+        <Label Content="Stellenbezeichnung:" Grid.Row="4" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold"/>
+        <TextBox Name="tbStellenbezeichnung" Grid.Row="4" Grid.Column="2" VerticalContentAlignment="Center" Margin="5"/>
+
+        <Label Content="E-Mail:" Grid.Row="5" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold"/>
+        <TextBox Name="tbEmail" Grid.Row="5" Grid.Column="2" VerticalContentAlignment="Center" Margin="5"/>
+
+        <Label Content="Benutzeraccount hinzufügen" Grid.Row="6" Grid.ColumnSpan="2" HorizontalAlignment="Center" FontWeight="Bold" FontSize="20"/>
+
+        <Label Content="Benutzername:" Grid.Row="7" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold"/>
+        <TextBox Name="tbBenutzername" Grid.Row="7" Grid.Column="2" VerticalContentAlignment="Center" Margin="5"/>
+
+        <Label Content="Passwort:" Grid.Row="8" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold"/>
+        <TextBox Name="tbPasswort" Grid.Row="8" Grid.Column="2" VerticalContentAlignment="Center" Margin="5"/>
+
+        <Label Content="Admin Account:" Grid.Row="9" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold"/>
+        <CheckBox Name="cbIstAdmin" Grid.Row="9" Grid.Column="2" VerticalContentAlignment="Center" Margin="5"/>
+
+        <StackPanel Grid.Row="10" Orientation="Horizontal" Grid.ColumnSpan="2">
+            <Button Content="Mitarbeiter hinzufügen" Margin="5" Width="300" Click="MitarbeiterHinzufuegen" FontWeight="Bold"/>
+            <Button Content="Zurück zum Menü" Margin="5" Width="300" Click="ZurueckZumMenue" FontWeight="Bold"/>
+        </StackPanel>
+        
+
+
+    </Grid>
+</UserControl>
