@@ -34,7 +34,7 @@ namespace _2_Projekt_Restaurant_Personalplanung
 
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void MitarbeiterHinzufuegen(object sender, RoutedEventArgs e)
         {
             bool IstAdmin = false;
             if(cbIstAdmin.IsChecked == true)
@@ -64,7 +64,7 @@ namespace _2_Projekt_Restaurant_Personalplanung
             Context.SaveChanges();
         }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+        private void ZurueckZumMenue(object sender, RoutedEventArgs e)
         {
             mainWindow.MenueAnzeigen();
         }

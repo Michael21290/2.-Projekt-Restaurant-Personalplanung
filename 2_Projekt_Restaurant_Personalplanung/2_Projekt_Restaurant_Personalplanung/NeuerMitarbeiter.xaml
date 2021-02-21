@@ -54,8 +54,8 @@
         <CheckBox Name="cbIstAdmin" Grid.Row="9" Grid.Column="2" VerticalContentAlignment="Center" Margin="5"/>
 
         <StackPanel Grid.Row="10" Orientation="Horizontal" Grid.ColumnSpan="2">
-            <Button Content="Mitarbeiter hinzufügen" Margin="5" Width="300" Click="Button_Click" FontWeight="Bold"/>
-            <Button Content="Zurück zum Menü" Margin="5" Width="300" Click="Button_Click_1" FontWeight="Bold"/>
+            <Button Content="Mitarbeiter hinzufügen" Margin="5" Width="300" Click="MitarbeiterHinzufuegen" FontWeight="Bold"/>
+            <Button Content="Zurück zum Menü" Margin="5" Width="300" Click="ZurueckZumMenue" FontWeight="Bold"/>
         </StackPanel>
         
 
