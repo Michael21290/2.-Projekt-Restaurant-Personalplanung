@@ -94,9 +94,6 @@
     <Compile Include="Datenmodel\Dienstplan.cs">
       <DependentUpon>PersonalplanModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Datenmodel\EingeteilterMitarbeiter.cs">
-      <DependentUpon>PersonalplanModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="Datenmodel\Mitarbeiter.cs">
       <DependentUpon>PersonalplanModel.tt</DependentUpon>
     </Compile>
@@ -114,12 +111,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>PersonalplanModel.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Datenmodel\Schicht.cs">
-      <DependentUpon>PersonalplanModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Datenmodel\Wochentag.cs">
-      <DependentUpon>PersonalplanModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Dienstplan.xaml.cs">
       <DependentUpon>Dienstplan.xaml</DependentUpon>

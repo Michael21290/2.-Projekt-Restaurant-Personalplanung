@@ -18,6 +18,7 @@ namespace _2_Projekt_Restaurant_Personalplanung.Datenmodel
         public Mitarbeiter()
         {
             this.Benutzeraccount = new HashSet<Benutzeraccount>();
+            this.Dienstplan = new HashSet<Dienstplan>();
         }
     
         public int ID_Mitarbeiter { get; set; }
@@ -30,5 +31,7 @@ namespace _2_Projekt_Restaurant_Personalplanung.Datenmodel
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Benutzeraccount> Benutzeraccount { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Dienstplan> Dienstplan { get; set; }
     }
 }

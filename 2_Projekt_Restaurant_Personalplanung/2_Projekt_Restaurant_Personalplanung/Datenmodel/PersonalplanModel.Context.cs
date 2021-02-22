@@ -27,9 +27,6 @@ namespace _2_Projekt_Restaurant_Personalplanung.Datenmodel
     
         public virtual DbSet<Benutzeraccount> Benutzeraccounts { get; set; }
         public virtual DbSet<Dienstplan> Dienstplaene { get; set; }
-        public virtual DbSet<EingeteilterMitarbeiter> EingeteilteMitarbeiter { get; set; }
         public virtual DbSet<Mitarbeiter> Angestellte { get; set; }
-        public virtual DbSet<Schicht> Schichten { get; set; }
-        public virtual DbSet<Wochentag> Wochentage { get; set; }
     }
 }

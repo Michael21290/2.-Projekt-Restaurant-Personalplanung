@@ -13,270 +13,82 @@
         </Grid.RowDefinitions>
         <Grid x:Name="MainGrid" VerticalAlignment="Stretch">
 
+
+
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="auto"></ColumnDefinition>
-                <ColumnDefinition ></ColumnDefinition>
-                <ColumnDefinition ></ColumnDefinition>
-                <ColumnDefinition ></ColumnDefinition>
-                <ColumnDefinition Width="auto"></ColumnDefinition>
+                <ColumnDefinition Width="100"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
                 <RowDefinition Height="auto"></RowDefinition>
                 <RowDefinition Height="auto"></RowDefinition>
-                <RowDefinition Height="*"></RowDefinition>
-                <RowDefinition Height="*"></RowDefinition>
-                <RowDefinition Height="*"></RowDefinition>
-                <RowDefinition Height="*"></RowDefinition>
-                <RowDefinition Height="*"></RowDefinition>
-                <RowDefinition Height="*"></RowDefinition>
-                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
                 <RowDefinition Height="auto"></RowDefinition>
             </Grid.RowDefinitions>
 
-            <Label Content="Dienstplan" FontWeight="Bold" Grid.ColumnSpan="4" HorizontalAlignment="Center" VerticalAlignment="Stretch"/>
+            <Label Content="Dienstplan" FontWeight="Bold" FontSize="20" Grid.ColumnSpan="4" HorizontalAlignment="Center" VerticalAlignment="Stretch"/>
+            <TextBlock Text="Angezeigte Dienstpläne:" TextWrapping="Wrap" Grid.Row="1"/>
+            <DataGrid Grid.Row="1" Grid.Column="1" ItemsSource="{Binding}" AutoGenerateColumns="False" IsSynchronizedWithCurrentItem="True" Height="150" >
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="ID" Binding="{Binding ID_Dienstplan}" />
+                    <DataGridTextColumn Header="Jahr"  Binding="{Binding Jahr}" />
+                    <DataGridTextColumn Header="Kallenderwoche"  Binding="{Binding Kallenderwoche}" />
+                    <DataGridTextColumn Header="Wochentag"  Binding="{Binding Wochentag}" />
+                    <DataGridTextColumn Header="Datum"  Binding="{Binding FuerDatum}" />
+                </DataGrid.Columns>
+            </DataGrid>
 
-            <Grid Name="JahrKW" Grid.Row="1">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition ></ColumnDefinition>
-                    <ColumnDefinition Width="auto"></ColumnDefinition>
-                </Grid.ColumnDefinitions>
-                <Grid.RowDefinitions>
-                    <RowDefinition></RowDefinition>
-                    <RowDefinition></RowDefinition>
-                </Grid.RowDefinitions>
-                <Label Content="KW:" FontWeight="Bold"/>
-                <TextBox Text="{Binding Kallenderwoche}" FontWeight="Bold" Grid.Column="1" Width="50"></TextBox>
+            <Label Content="ID:" Grid.Row="2"/>
+            <Label Content="{Binding /ID_Dienstplan}" x:Name="DienstplanID" Grid.Row="2" Grid.Column="1" Margin="3"/>
 
-                <Label Content="Jahr:" FontWeight="Bold" Grid.Row="1"/>
-                <TextBox Text="{Binding Jahr}" FontWeight="Bold" Grid.Row="1" Grid.Column="1" Width="50"></TextBox>
-            </Grid>
+            <Label Content="Jahr:" Grid.Row="3"/>
+            <TextBox Text="{Binding /Jahr}" Grid.Row="3" Grid.Column="1" Margin="3"/>
 
-            <Label Content="Montag" FontWeight="Bold" VerticalAlignment="Center" HorizontalContentAlignment="Center" Grid.Row="2" HorizontalAlignment="Center"/>
-            <Label Content="Dienstag" FontWeight="Bold" VerticalAlignment="Center" HorizontalContentAlignment="Center" Grid.Row="3" HorizontalAlignment="Center"/>
-            <Label Content="Mittwoch" FontWeight="Bold" VerticalAlignment="Center" HorizontalContentAlignment="Center" Grid.Row="4" HorizontalAlignment="Center"/>
-            <Label Content="Donnerstag" FontWeight="Bold" VerticalAlignment="Center" HorizontalContentAlignment="Center" Grid.Row="5" HorizontalAlignment="Center"/>
-            <Label Content="Freitag" FontWeight="Bold" VerticalAlignment="Center" HorizontalContentAlignment="Center" Grid.Row="6" HorizontalAlignment="Center"/>
-            <Label Content="Samstag" FontWeight="Bold" VerticalAlignment="Center" HorizontalContentAlignment="Center" Grid.Row="7" HorizontalAlignment="Center"/>
-            <Label Content="Sonntag" FontWeight="Bold" VerticalAlignment="Center" HorizontalContentAlignment="Center" Grid.Row="8" HorizontalAlignment="Center"/>
+            <Label Content="Kallenderwoche:" Grid.Row="4"/>
+            <TextBox Text="{Binding /Kallenderwoche}" Grid.Row="4" Grid.Column="1" Margin="3"/>
 
-            <TextBlock FontWeight="Bold" Grid.Column="1" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center" TextAlignment="Center">Frühschicht<LineBreak/>08:00 - 13:00</TextBlock>
-            <TextBlock FontWeight="Bold" Grid.Column="2" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center" TextAlignment="Center">Mittagsschicht<LineBreak/>13:00 - 18:00</TextBlock>
-            <TextBlock FontWeight="Bold" Grid.Column="3" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center" TextAlignment="Center">Spätschicht<LineBreak/>18:00 - 23:00</TextBlock>
+            <Label Content="Wochentag:" Grid.Row="5"/>
+            <TextBox Text="{Binding /Wochentag}" Grid.Row="5" Grid.Column="1" Margin="3"/>
 
-            <ListView Name="mo1" Grid.Row="2" Grid.Column="1" ItemsSource="{Binding}" HorizontalAlignment="Stretch" >
+            <Label Content="Für Datum:" Grid.Row="6"/>
+            <TextBox Text="{Binding /FuerDatum, StringFormat=dd.MM.yyyy}" Grid.Row="6" Grid.Column="1" Margin="3"/>
+
+            <Label Content="Erstellt am:" Grid.Row="7"/>
+            <TextBox Text="{Binding /ErstelltDatum, StringFormat=dd.MM.yyyy}" Grid.Row="7" Grid.Column="1" Margin="3"/>
+
+            <TextBlock Text="Eingeteilte Mitarbeiter:" Grid.Row="8" TextWrapping="Wrap"/>
+            <ListView Grid.Row="8" Grid.Column="1" ItemsSource="{Binding /Mitarbeiter}" Height="50" Margin="3">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <StackPanel Orientation="Horizontal">
-                            <TextBox Text="{Binding name}"/>
+                            <TextBlock Text="{Binding ID_Mitarbeiter}"/>
+                            <TextBlock Text=" - " />
+                            <TextBlock Text="{Binding Vorname}" />
+                            <TextBlock Text=" " />
+                            <TextBlock Text="{Binding Name}" />
                         </StackPanel>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
 
-            <ListView Name="mo2" Grid.Row="2" Grid.Column="2" ItemsSource="{Binding}" HorizontalAlignment="Stretch" >
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <StackPanel Orientation="Horizontal">
-                            <TextBox Text="{Binding name}"/>
-                        </StackPanel>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
+            <TextBlock Text="Filtern nach Jahr:" Grid.Row="9" TextWrapping="Wrap"/>
+            <TextBox x:Name="TbFilterJahr" Grid.Row="9" Grid.Column="1" Margin="3" KeyUp="TbFilterJahr_KeyUp"/>
 
-            <ListView Name="mo3" Grid.Row="2" Grid.Column="3" ItemsSource="{Binding}" HorizontalAlignment="Stretch" >
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <StackPanel Orientation="Horizontal">
-                            <TextBox Text="{Binding name}"/>
-                        </StackPanel>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
+            <TextBlock Text="Filtern nach KW:" Grid.Row="10" TextWrapping="Wrap"/>
+            <TextBox x:Name="TbFilterKW" Grid.Row="10" Grid.Column="1" Margin="3" KeyUp="TbFilterKW_KeyUp"/>
 
-            <ListView Name="di1" Grid.Row="3" Grid.Column="1" ItemsSource="{Binding}" HorizontalAlignment="Stretch" >
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <StackPanel Orientation="Horizontal">
-                            <TextBox Text="{Binding name}"/>
-                        </StackPanel>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
-
-            <ListView Name="di2" Grid.Row="3" Grid.Column="2" ItemsSource="{Binding}" HorizontalAlignment="Stretch" >
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <StackPanel Orientation="Horizontal">
-                            <TextBox Text="{Binding name}"/>
-                        </StackPanel>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
-
-            <ListView Name="di3" Grid.Row="3" Grid.Column="3" ItemsSource="{Binding}" HorizontalAlignment="Stretch" >
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <StackPanel Orientation="Horizontal">
-                            <TextBox Text="{Binding name}"/>
-                        </StackPanel>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
-
-            <ListView Name="mi1" Grid.Row="4" Grid.Column="1" ItemsSource="{Binding}" HorizontalAlignment="Stretch" >
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <StackPanel Orientation="Horizontal">
-                            <TextBox Text="{Binding name}"/>
-                        </StackPanel>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
-
-            <ListView Name="mi2" Grid.Row="4" Grid.Column="2" ItemsSource="{Binding}" HorizontalAlignment="Stretch" >
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <StackPanel Orientation="Horizontal">
-                            <TextBox Text="{Binding name}"/>
-                        </StackPanel>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
-
-            <ListView Name="mi3" Grid.Row="4" Grid.Column="3" ItemsSource="{Binding}" HorizontalAlignment="Stretch" >
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <StackPanel Orientation="Horizontal">
-                            <TextBox Text="{Binding name}"/>
-                        </StackPanel>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
-
-            <ListView Name="do1" Grid.Row="5" Grid.Column="1" ItemsSource="{Binding}" HorizontalAlignment="Stretch" >
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <StackPanel Orientation="Horizontal">
-                            <TextBox Text="{Binding name}"/>
-                        </StackPanel>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
-
-            <ListView Name="do2" Grid.Row="5" Grid.Column="2" ItemsSource="{Binding}" HorizontalAlignment="Stretch" >
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <StackPanel Orientation="Horizontal">
-                            <TextBox Text="{Binding name}"/>
-                        </StackPanel>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
-
-            <ListView Name="do3" Grid.Row="5" Grid.Column="3" ItemsSource="{Binding}" HorizontalAlignment="Stretch" >
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <StackPanel Orientation="Horizontal">
-                            <TextBox Text="{Binding name}"/>
-                        </StackPanel>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
-
-            <ListView Name="fr1" Grid.Row="6" Grid.Column="1" ItemsSource="{Binding}" HorizontalAlignment="Stretch" >
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <StackPanel Orientation="Horizontal">
-                            <TextBox Text="{Binding name}"/>
-                        </StackPanel>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
-
-            <ListView Name="fr2" Grid.Row="6" Grid.Column="2" ItemsSource="{Binding}" HorizontalAlignment="Stretch" >
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <StackPanel Orientation="Horizontal">
-                            <TextBox Text="{Binding name}"/>
-                        </StackPanel>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
-
-            <ListView Name="fr3" Grid.Row="6" Grid.Column="3" ItemsSource="{Binding}" HorizontalAlignment="Stretch" >
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <StackPanel Orientation="Horizontal">
-                            <TextBox Text="{Binding name}"/>
-                        </StackPanel>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
-
-            <ListView Name="sa1" Grid.Row="7" Grid.Column="1" ItemsSource="{Binding}" HorizontalAlignment="Stretch" >
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <StackPanel Orientation="Horizontal">
-                            <TextBox Text="{Binding name}"/>
-                        </StackPanel>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
-
-            <ListView Name="sa2" Grid.Row="7" Grid.Column="2" ItemsSource="{Binding}" HorizontalAlignment="Stretch" >
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <StackPanel Orientation="Horizontal">
-                            <TextBox Text="{Binding name}"/>
-                        </StackPanel>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
-
-            <ListView Name="sa3" Grid.Row="7" Grid.Column="3" ItemsSource="{Binding}" HorizontalAlignment="Stretch" >
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <StackPanel Orientation="Horizontal">
-                            <TextBox Text="{Binding name}"/>
-                        </StackPanel>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
-
-            <ListView Name="so1" Grid.Row="8" Grid.Column="1" ItemsSource="{Binding}" HorizontalAlignment="Stretch" >
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <StackPanel Orientation="Horizontal">
-                            <TextBox Text="{Binding name}"/>
-                        </StackPanel>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
-
-            <ListView Name="so2" Grid.Row="8" Grid.Column="2" ItemsSource="{Binding}" HorizontalAlignment="Stretch" >
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <StackPanel Orientation="Horizontal">
-                            <TextBox Text="{Binding name}"/>
-                        </StackPanel>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
-
-            <ListView Name="so3" Grid.Row="8" Grid.Column="3" ItemsSource="{Binding}" HorizontalAlignment="Stretch" >
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <StackPanel Orientation="Horizontal">
-                            <TextBox Text="{Binding name}"/>
-                        </StackPanel>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
         </Grid>
 
-        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
-            <Button Margin="3" Content="Ausloggen" FontWeight="Bold" Click="Ausloggen" Width="300"></Button>
-            <Button Margin="3" Content="Drucken" FontWeight="Bold" Click="Drucken" Width="300"/>
+        <StackPanel Grid.Row="1" Orientation="Horizontal">
+            <Button Margin="3" Content="Ausloggen" FontWeight="Bold" Click="Ausloggen" Width="200"/>
+            <Button Margin="3" Content="Drucken" FontWeight="Bold" Click="Drucken" Width="200"/>
         </StackPanel>
 
     </Grid>

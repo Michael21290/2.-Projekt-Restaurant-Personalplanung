@@ -15,8 +15,8 @@ Login Daten User:
 Benutzername: peterparker
 Passwort: peter
 
-Der Dienstplan ist so aufgebaut das es für jeden Tag in der Woche 3 verschiedene Schichten gibt in den Mitarbeiter eingetragen werden können.
-Mit dem Button Drucken hat man die Möglichkeit den aktuellen Dienstplan als Pdf auszudrucken und auf dem Rechner zuspeichern.
+Jeder Dienstplan ist für einen Tag gültig und beinhaltet das Jahr, die Kallenderwoche und den Tag an dem dieser Dienstplan gilt.
+Mit dem Button Drucken hat man die Möglichkeit den ausgewählten Dienstplan als Pdf auszudrucken und/oder auf dem Rechner zuspeichern.
 Screenshot1 zeigt die Maske um einen neuen Mitarbeiter in die Datenbank hinzuzufügen.
 Screenshot2 ist ein Bild des Dienstplanes das mit unsere Drucken-Funktion aufgenommen und als Pdf abgespeichert wurde.
 Screenshot3 zeigt das Loginfenster mit Eingabefeldern für Accountname und Passwort und dem Login-Button.

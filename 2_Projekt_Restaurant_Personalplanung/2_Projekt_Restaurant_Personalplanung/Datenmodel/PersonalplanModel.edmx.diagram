@@ -4,17 +4,12 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="a2f9c51ff3784883a9815b8021accd66" Name="Diagram1">
-        <EntityTypeShape EntityType="PersonalplanModel.Benutzeraccount" Width="1.5" PointX="8" PointY="4.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="PersonalplanModel.Dienstplan" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="PersonalplanModel.EingeteilterMitarbeiter" Width="1.5" PointX="5.25" PointY="0.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="PersonalplanModel.Mitarbeiter" Width="1.5" PointX="5.75" PointY="4" IsExpanded="true" />
-        <EntityTypeShape EntityType="PersonalplanModel.Schicht" Width="1.5" PointX="7.375" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="PersonalplanModel.Wochentag" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+      <Diagram DiagramId="c3e718c1c9614cf8aacd55c20911dc64" Name="Diagram1">
+        <EntityTypeShape EntityType="PersonalplanModel.Benutzeraccount" Width="1.5" PointX="5.25" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="PersonalplanModel.Dienstplan" Width="1.5" PointX="0.75" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="PersonalplanModel.Mitarbeiter" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
         <AssociationConnector Association="PersonalplanModel.fk_Angestellter" ManuallyRouted="false" />
-        <AssociationConnector Association="PersonalplanModel.fk_TSchicht" ManuallyRouted="false" />
-        <AssociationConnector Association="PersonalplanModel.fk_Wochentag" ManuallyRouted="false" />
-        <AssociationConnector Association="PersonalplanModel.DienstplanTag" ManuallyRouted="false" />
+        <AssociationConnector Association="PersonalplanModel.EingeteilterMitarbeiter" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

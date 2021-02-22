@@ -17,14 +17,17 @@ namespace _2_Projekt_Restaurant_Personalplanung.Datenmodel
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Dienstplan()
         {
-            this.Wochentag = new HashSet<Wochentag>();
+            this.Mitarbeiter = new HashSet<Mitarbeiter>();
         }
     
         public int ID_Dienstplan { get; set; }
-        public Nullable<int> Kallenderwoche { get; set; }
-        public Nullable<int> Jahr { get; set; }
+        public string Jahr { get; set; }
+        public string Kallenderwoche { get; set; }
+        public string Wochentag { get; set; }
+        public Nullable<System.DateTime> FuerDatum { get; set; }
+        public Nullable<System.DateTime> ErstelltDatum { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Wochentag> Wochentag { get; set; }
+        public virtual ICollection<Mitarbeiter> Mitarbeiter { get; set; }
     }
 }

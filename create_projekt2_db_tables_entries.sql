@@ -20,21 +20,10 @@ IF OBJECT_ID('Dienstplan') IS NOT NULL
   DROP TABLE Dienstplan;
 GO
 
-IF OBJECT_ID('Wochentag') IS NOT NULL
-  DROP TABLE Wochentag;
+IF OBJECT_ID('EingeteilteMitarbeiter') IS NOT NULL
+  DROP TABLE EingeteilteMitarbeiter;
 GO
 
-IF OBJECT_ID('Schicht') IS NOT NULL
-  DROP TABLE Schicht;
-GO
-
-IF OBJECT_ID('EingeteilterMitarbeiter') IS NOT NULL
-  DROP TABLE EingeteilterMitarbeiter;
-GO
-
-IF OBJECT_ID('DienstplanTag') IS NOT NULL
-  DROP TABLE DienstplanTag;
-GO
 
 CREATE TABLE Mitarbeiter (
   ID_Mitarbeiter int IDENTITY NOT NULL PRIMARY KEY, 
@@ -59,45 +48,24 @@ CREATE TABLE Benutzeraccount (
 
 CREATE TABLE Dienstplan (
   ID_Dienstplan int NOT NULL IDENTITY PRIMARY KEY, 
-  Kallenderwoche int,
-  Jahr int
-);
-
-CREATE TABLE Wochentag (
-  ID_Wochentag int NOT NULL IDENTITY PRIMARY KEY, 
-  Bezeichnung nvarchar(50),
-);
-
-CREATE TABLE Schicht (
-  ID_Schicht int NOT NULL IDENTITY PRIMARY KEY, 
-  Bezeichnung nvarchar(50),
+  Jahr nvarchar(50),
+  Kallenderwoche nvarchar(50),
+  Wochentag nvarchar(50),
+  FuerDatum datetime,
+  ErstelltDatum datetime
 );
 
 CREATE TABLE EingeteilterMitarbeiter ( 
-  name nvarchar(500),
-  ID_Wochentag int,
-  ID_Schicht int,
-  CONSTRAINT pk_WochentagID PRIMARY KEY (ID_Wochentag, ID_Schicht),
-  CONSTRAINT fk_Wochentag
-    FOREIGN KEY (ID_Wochentag)
-    REFERENCES Wochentag(ID_Wochentag),
-  CONSTRAINT fk_TSchicht
-    FOREIGN KEY (ID_Schicht)
-    REFERENCES Schicht(ID_Schicht)
-);
-
-CREATE TABLE DienstplanTag ( 
+  ID_Mitarbeiter int,
   ID_Dienstplan int,
-  ID_Wochentag int,
-  CONSTRAINT pk_DienstplanID PRIMARY KEY (ID_Dienstplan, ID_Wochentag),
+  CONSTRAINT pk_EingeteilterMitarbeiterID PRIMARY KEY (ID_Mitarbeiter, ID_Dienstplan),
+  CONSTRAINT fk_Mitarbeiter
+    FOREIGN KEY (ID_Mitarbeiter)
+    REFERENCES Mitarbeiter(ID_Mitarbeiter),
   CONSTRAINT fk_Dienstplan
     FOREIGN KEY (ID_Dienstplan)
-    REFERENCES Dienstplan(ID_Dienstplan),
-  CONSTRAINT fk_WoTag
-    FOREIGN KEY (ID_Wochentag)
-    REFERENCES Wochentag(ID_Wochentag)
+    REFERENCES Dienstplan(ID_Dienstplan)
 );
-
 
 INSERT INTO Mitarbeiter(Name, Vorname, Geburtsdatum, Einstellungsdatum, Stellenbezeichnung, Email) VALUES
   ('Stark','Tony','19900117 10:23:45:123',GETDATE(),'Koch','stark@tony.de'),
@@ -113,56 +81,29 @@ INSERT INTO Benutzeraccount (Benutzername, Passwort, IstAdmin, Angestellter) VAL
   ('thorodinson', 'thor', 0, 4)
 ;
 
-INSERT INTO Dienstplan(Kallenderwoche, Jahr) VALUES
-  (1, 2021)
+INSERT INTO Dienstplan(Jahr, Kallenderwoche, Wochentag, FuerDatum, ErstelltDatum) VALUES
+  ('2021', '08', 'Montag', '20210222 00:00:00:000',GETDATE()),
+  ('2021', '08', 'Dienstag', '20210223 00:00:00:000',GETDATE()),
+  ('2021', '08', 'Mittwoch', '20210224 00:00:00:000',GETDATE()),
+  ('2021', '08', 'Donnerstag', '20210225 00:00:00:000',GETDATE()),
+  ('2021', '08', 'Freitag', '20210226 00:00:00:000',GETDATE()),
+  ('2021', '08', 'Samstag', '20210227 00:00:00:000',GETDATE()),
+  ('2021', '08', 'Sonntag', '20210227 00:00:00:000',GETDATE())
 ;
 
-INSERT INTO Wochentag(Bezeichnung) VALUES
-  ('Montag'),
-  ('Dienstag'),
-  ('Mittwoch'),
-  ('Donnerstag'),
-  ('Freitag'),
-  ('Samstag'),
-  ('Sonntag')
-;
-
-INSERT INTO Schicht(Bezeichnung) VALUES
-  ('Frühschicht'),
-  ('Mittagsschicht'),
-  ('Spätschicht')
-;
-
-INSERT INTO EingeteilterMitarbeiter(name, ID_Wochentag, ID_Schicht) VALUES
-  ('Thor Odinson, Steve Rogers', 1,1),
-  ('Thor Odinson, Tony Stark, Steve Rogers, Peter Parker', 1,2),
-  ('Tony Stark, Peter Parker', 1,3),
-  ('Thor Odinson, Steve Rogers', 2,1),
-  ('Thor Odinson, Tony Stark, Steve Rogers, Peter Parker', 2,2),
-  ('Tony Stark, Peter Parker', 2,3),
-  ('Thor Odinson, Steve Rogers', 3,1),
-  ('Thor Odinson, Tony Stark, Steve Rogers, Peter Parker', 3,2),
-  ('Tony Stark, Peter Parker', 3,3),
-  ('Thor Odinson, Steve Rogers', 4,1),
-  ('Thor Odinson, Tony Stark, Steve Rogers, Peter Parker', 4,2),
-  ('Tony Stark, Peter Parker', 4,3),
-  ('Thor Odinson, Steve Rogers', 5,1),
-  ('Thor Odinson, Tony Stark, Steve Rogers, Peter Parker', 5,2),
-  ('Tony Stark, Peter Parker', 5,3),
-  ('Thor Odinson, Steve Rogers', 6,1),
-  ('Thor Odinson, Tony Stark, Steve Rogers, Peter Parker', 6,2),
-  ('Tony Stark, Peter Parker', 6,3),
-  ('Thor Odinson, Steve Rogers', 7,1),
-  ('Thor Odinson, Tony Stark, Steve Rogers, Peter Parker', 7,2),
-  ('Tony Stark, Peter Parker', 7,3)
-;
-
-INSERT INTO DienstplanTag( ID_Dienstplan, ID_Wochentag) VALUES
+INSERT INTO EingeteilterMitarbeiter(ID_Mitarbeiter, ID_Dienstplan) VALUES
   (1,1),
-  (1,2),
+  (2,1),
+  (3,2),
+  (4,2),
   (1,3),
-  (1,4),
+  (2,3),
+  (3,4),
+  (4,4),
   (1,5),
-  (1,6),
-  (1,7)
+  (2,5),
+  (3,6),
+  (4,6),
+  (1,7),
+  (2,7)
 ;
